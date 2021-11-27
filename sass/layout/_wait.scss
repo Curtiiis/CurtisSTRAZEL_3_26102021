@@ -23,6 +23,7 @@
         box-shadow: inset 0px 11px 7px -11px rgba(0,0,0,0.28);
     }
     &__address{
+        position: relative;
         border: none;
         background-color: #eaeaea;
         color: #555;
@@ -32,9 +33,27 @@
             outline: none;
         }
     }
-    &__form{ //à créer
+    &__form{ 
+        position: relative;
         display: flex;
         height: 70%;
+    }
+    &__form::before{
+        position: absolute;
+        top: 50%;
+        left: -30px;
+        transform: translateY(-50%);
+        font-family: "Font Awesome 5 Free";
+        color: #353535;
+        font-size: 1.4rem;
+        font-weight: 900;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        content: "\f3c5";
+        z-index: 2;
     }
     &__explore{
         @include flex-column;
@@ -44,13 +63,6 @@
     }
 }
 
-.fa-map-marker-alt{
-    display: inline-block;
-    margin-right: 20px;
-    width: 30%;
-    text-align: right;
-    color: #353535;
-    }
 
 h1{
     font-size: 1.6rem;
@@ -75,7 +87,6 @@ h2{
 // MAIN
 
 .main{
-    margin: 20px 0;
     &__aside{
         display: none;
     }
@@ -133,7 +144,7 @@ h2{
     }
     &__restaurants{
         width: 100%;
-        padding: 0 20px;
+        padding: 30px 20px;
         background-color: #f6f6f6;
     }
 }
@@ -157,7 +168,13 @@ h2{
     border-radius: 20px;
     box-shadow: 0 0 10px #0003;
     background-color: #fff;
+    transition: all .3s ease-in-out;
 }
+.main__card:hover{
+    box-shadow: 0 0 10px #0007;
+    transform: scale(1.01);
+}
+
 .main-cards-content{
     position: relative;
     display: flex;
@@ -169,19 +186,28 @@ h2{
 .main-links{
     height: 175px;
 }
+.main-cards-title{
+    font-size: 1.3rem;
+    letter-spacing: .02rem;
+}
 .main-cards-title:hover,
 .main-town:hover{
     text-decoration: underline;
 }
 
-
+.main-picture{
+    position: relative;
+    display: block;
+    height: 100%;
+}
 .main-img{
     width: 100%;
     height: 100%;  
     object-fit: cover;
     border-radius: 20px 20px 0 0;
 }
-.main__card::before{
+#main__card1::before,
+#main__card2::before{
     position: absolute;
     top: 10px;
     right: 10px;
@@ -204,144 +230,126 @@ a{
     color: unset;
     text-decoration: none;
 }
-
-// .card__btn{
-//     border: none;
-//     background-color: unset;
-//     cursor: pointer;
-//     z-index: 10;
-// }
-
-
-// .heart-pink{
-//     z-index: 1;
-// }
-// .heart__label{
-//     position: relative;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     z-index: 10;
-// }
-
-// .fa-heart::before{
-//     position: absolute;
-//     top: 0;
-//     right: 0px;
-//     font-size: 25px;
-//     padding: 10px;
-// }
-// #heart1{
-//     z-index: 2;
-//     color: #888;
-// }
-// #heart1b{
-//     z-index: 1;
-//     color: #f00;
-//     background-color: red;
-// }
-// #heart__check:checked ~ #heart1{
-//     background-color: yellow;
-// }
-
-// #heart__check{
-//     position: relative;
-//     width: 25px;
-//     height: 25px;
-//     outline: none;
-//     background-color: #ccc;
-//     -webkit-appearance: none;
-//     transform: rotate(45deg);
-// }
-// #heart__check::before{
-//     position: absolute;
-//     content: '';
-//     background-color: #ccc;
-//     height: 60%;
-//     width: 100%;
-//     top: -58%;
-//     border-radius: 12px 12px 0 0;
-// }
-// #heart__check::after{
-//     position: absolute;
-//     top: 20%;
-//     right: 78%;
-//     content: '';
-//     background-color: #ccc;
-//     height: 60%;
-//     width: 100%;
-//     transform: rotate(-90deg);
-//     border-radius: 12px 12px 0 0;
-// }
-
-
-
-
-// .heart__label{
-//     position: relative;
-//     border: 1px solid #000;
-//     width: 30px;
-//     height: 30px;
-// }
-// .heart__label::before{
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     font-family: "Font Awesome 5 Free";
-//     // color: #7e7e7e;
-//     font-size: 1.4rem;
-//     font-weight: 900;
-//     display: inline-block;
-//     font-style: normal;
-//     font-variant: normal;
-//     text-rendering: auto;
-//     -webkit-font-smoothing: antialiased;
-//     content: "\f004";
-// }
-
-// #heart__check:checked .heart__label::before{
-//     opacity: 0;
-// }
-
+a.main-town{
+    font-weight: 200;
+}
 
 .fa-heart{
     background-image: linear-gradient(to top, #9356DC, #FF79DA);
     background-size: cover;
     background-clip: text;
     -webkit-background-clip: text;
-    color: transparent;
-    font-size: 25px;
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%);
-    transition: .5s;
-}
-#heart--grey{
-    background-image: unset;
-    color: #ccc;
     -webkit-text-fill-color: #fff;
-    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-width: .1rem;
+    color: #111;
     font-size: 25px;
-    z-index: 2;
-}
-#heart--pink{
-    font-size: 26px;
-    opacity: 0;
+
+    @include flex-center;
+    width: 30px;
+    height: 30px;
+
+    cursor: pointer;
+
+    transition: all .3s ease-in-out;
 }
 
-#heart__check{
+#heart__check1,
+#heart__check2,
+#heart__check3,
+#heart__check4{
     display: none;
+    position: relative;
+    right: 70px;
+    transition: all .5s ease-in-out;
 }
-#heart__check:checked ~ .heart__label #heart--grey{
+
+#heart__check1:checked ~ .heart__label  #fa-heart-1,
+#heart__check2:checked ~ .heart__label  #fa-heart-2,
+#heart__check3:checked ~ .heart__label  #fa-heart-3,
+#heart__check4:checked ~ .heart__label  #fa-heart-4{
     color: transparent;
     -webkit-text-fill-color: transparent;
 }
-#heart__check:checked ~ .heart__label #heart--pink{
-    opacity: 1;
+
+.heart-big{
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    @include flex-center;
+}
+
+.heart-big::before{
+    position: absolute;
+    content: "\f004";
+    font-family: "Font Awesome 5 Free";
+    font-size: 2rem;
+    font-weight: 900;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+
+    color: rgb(255, 5, 101);
+    
+    opacity: 0;
+    transition: opacity .5s;
+}
+#heart__check1:checked ~ .heart-big::before,
+#heart__check2:checked ~ .heart-big::before,
+#heart__check3:checked ~ .heart-big::before,
+#heart__check4:checked ~ .heart-big::before{
+    animation: heart-big .7s backwards
+}
+
+@keyframes heart-big {
+    0%{
+        opacity: 0;
+        font-size: 2rem;
+    };
+    50%{
+        opacity: 1;
+        font-size: 7rem;
+    };
+    75%{
+        opacity: 1;
+        font-size: 7rem;
+    };
+    100%{
+        opacity: 0;
+        font-size: 7rem;
+    };
 }
 
 
 
 
+
+// FOOTER
+.footer{
+    padding: 20px;
+    background-color: #353535;
+    color: #fff;
+}
+.footer__logo{
+    height: 20px;
+    margin: 10px 0;
+}
+.fa-utensils,
+.fa-hands-helping{
+    margin-right: 7px;
+    font-size: 13px;
+}
+
+.footer__item{
+    margin-bottom: 5px;
+}
+.footer__item:hover{
+    text-shadow: 0 0 3px #fff;
+}
+
+
+
+@media screen and (min-width: 768px) {
+    
+}

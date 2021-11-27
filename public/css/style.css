@@ -691,7 +691,7 @@ a.main-town {
   z-index: 2;
 }
 
-#heart--grey::before {
+.fa-heart::before {
   display: flex;
   justify-content: center;
   align-items: center;

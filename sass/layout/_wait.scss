@@ -20,16 +20,15 @@
     }
     &__logo a{
         display: block;
-        width: 100%;
-        height: 100%;
+        @include size-100;
     }
     &__localisation{
         @include flex-center;
         width: 100%;
         height: 50px;
-        background-color: #eaeaea;
-        -webkit-box-shadow: inset 0px 19px 7px -11px rgba(0,0,0,0.28);
-        box-shadow: inset 0px 11px 7px -11px rgba(0,0,0,0.28);
+        background-color: $clr-bg-map;
+        -webkit-box-shadow: $box-shadow-inset;
+        box-shadow: $box-shadow-inset;
         @include mq-tablet{
             width: 355px;
         }
@@ -40,10 +39,12 @@
     &__address{
         position: relative;
         border: none;
-        background-color: #eaeaea;
-        color: #555;
+        background-color: $clr-bg-map;
+
+        color: $clr-grey-dark;
         font-weight: 600;
         font-size: 1.2rem;
+
         &:focus{
             outline: none;
         }
@@ -54,27 +55,20 @@
         height: 70%;
     }
     &__form::before{
-        position: absolute;
-        top: 50%;
-        left: -30px;
-        transform: translateY(-50%);
-        font-family: "Font Awesome 5 Free";
-        color: #353535;
-        font-size: 1.4rem;
-        font-weight: 900;
-        display: inline-block;
-        font-style: normal;
-        font-variant: normal;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
+        @include icon-pseudo-element;
         content: "\f3c5";
-        z-index: 2;
+        @include center-trans-y;
+        left: -30px;
+
+        color: $clr-grey-dark;
+        font-size: 1.4rem;
     }
+
     &__explore{
         @include flex-column;
         padding: 30px 30px 50px;
         text-align: center;
-        background-color: #f6f6f6;
+        background-color: $clr-background;
         @include mq-tablet{
             align-items: start;
             text-align: left;
@@ -157,7 +151,7 @@ h2{
             margin: 12px 0;
             padding: 20px;
 
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: bold;
             text-align: center;
             border-radius: 20px;
@@ -199,6 +193,13 @@ h2{
             font-size: 1rem;
             background-color: #9356dc;
             @include flex-center;
+        }
+        &__item:hover{
+            background-color: #f5edff;
+            cursor: default;
+        }
+        &__item:hover::before{
+            color: #9356dc;
         }
     }
     &__restaurants{
@@ -321,7 +322,28 @@ a.main-town{
     font-weight: 200;
 }
 
+// .fa-heart{
+//     background-image: linear-gradient(to top, #9356DC, #FF79DA);
+//     background-size: cover;
+//     background-clip: text;
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: #fff;
+//     -webkit-text-stroke-width: .1rem;
+//     color: #111;
+//     font-size: 25px;
+
+//     @include flex-center;
+//     width: 30px;
+//     height: 30px;
+
+//     cursor: pointer;
+
+//     transition: all .3s ease-in-out;
+// }
+
 .fa-heart{
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#9356DC), to(#FF79DA));
+    background-image: -o-linear-gradient(bottom, #9356DC, #FF79DA);
     background-image: linear-gradient(to top, #9356DC, #FF79DA);
     background-size: cover;
     background-clip: text;
@@ -337,16 +359,27 @@ a.main-town{
 
     cursor: pointer;
 
+    -webkit-transition: all .3s ease-in-out;
+
+    -o-transition: all .3s ease-in-out;
+
     transition: all .3s ease-in-out;
 }
+
 
 #heart__check1,
 #heart__check2,
 #heart__check3,
 #heart__check4{
+    // display: none;
+    // position: relative;
+    // right: 70px;
+    // transition: all .5s ease-in-out;
     display: none;
     position: relative;
     right: 70px;
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
 }
 

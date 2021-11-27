@@ -341,31 +341,74 @@ a.main-town{
 //     transition: all .3s ease-in-out;
 // }
 
+// .fa-heart{
+//     background-image: -webkit-gradient(linear, left bottom, left top, from(#9356DC), to(#FF79DA));
+//     background-image: -o-linear-gradient(bottom, #9356DC, #FF79DA);
+//     background-image: linear-gradient(to top, #9356DC, #FF79DA);
+//     background-size: cover;
+//     background-clip: text;
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: #fff;
+//     -webkit-text-stroke-width: .1rem;
+//     color: #111;
+//     font-size: 25px;
+
+//     @include flex-center;
+//     width: 30px;
+//     height: 30px;
+
+//     cursor: pointer;
+
+//     -webkit-transition: all .3s ease-in-out;
+
+//     -o-transition: all .3s ease-in-out;
+
+//     transition: all .3s ease-in-out;
+// }
+
+ //
 .fa-heart{
-    background-image: -webkit-gradient(linear, left bottom, left top, from(#9356DC), to(#FF79DA));
-    background-image: -o-linear-gradient(bottom, #9356DC, #FF79DA);
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    background-image: linear-gradient(to top, #9356DC, #FF79DA);
+}
+#heart--grey{
+    background-image: unset;
+    color: #ccc;
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke-width: 2px;
+    font-size: 25px;
+    z-index: 2;
+}
+#heart--grey::before{
+    @include flex-center;
+    width: 30px;
+    height: 30px;
+}
+#heart--pink{
     background-image: linear-gradient(to top, #9356DC, #FF79DA);
     background-size: cover;
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: #fff;
     -webkit-text-stroke-width: .1rem;
-    color: #111;
+    color: transparent;
     font-size: 25px;
-
-    @include flex-center;
-    width: 30px;
-    height: 30px;
-
-    cursor: pointer;
-
-    -webkit-transition: all .3s ease-in-out;
-
-    -o-transition: all .3s ease-in-out;
-
-    transition: all .3s ease-in-out;
+    font-size: 26px;
+    opacity: 0;
 }
 
+#heart__check{
+    display: none;
+}
+#heart__check:checked ~ .heart__label #heart--grey{
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+#heart__check:checked ~ .heart__label #heart--pink{
+    opacity: 1;
+}
+//
 
 #heart__check1,
 #heart__check2,

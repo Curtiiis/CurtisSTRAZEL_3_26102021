@@ -1,7 +1,16 @@
+
+
 .header{
     &__nav{
         @include flex-center;
         flex-wrap: wrap;
+        @include mq-tablet{
+            justify-content: space-between;
+            padding: 10px 30px 10px 0;
+        }
+        @include mq-desktop{
+            padding: 10px 40px 10px 10px;
+        }
     }
     &__logo{
         padding: 15px 30px 10px;
@@ -21,6 +30,12 @@
         background-color: #eaeaea;
         -webkit-box-shadow: inset 0px 19px 7px -11px rgba(0,0,0,0.28);
         box-shadow: inset 0px 11px 7px -11px rgba(0,0,0,0.28);
+        @include mq-tablet{
+            width: 355px;
+        }
+    }
+    &__form{
+        transform: translateX(50px);
     }
     &__address{
         position: relative;
@@ -60,6 +75,10 @@
         padding: 30px 30px 50px;
         text-align: center;
         background-color: #f6f6f6;
+        @include mq-tablet{
+            align-items: start;
+            text-align: left;
+        }
     }
 }
 
@@ -89,6 +108,36 @@ h2{
 .main{
     &__aside{
         display: none;
+        @include mq-desktop{
+            display: block;
+            width: 330px;
+            margin-right: 20px;
+        }
+        &__form{
+            display: flex;
+            flex-direction: column;
+        }
+        &__item{
+            margin: 2px 0;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        &__check{
+            margin-right: 10px;
+            width: 17px;
+            height: 17px;
+        }
+        &__section{
+            margin-top: 20px;
+        }
+    }
+    &__content{
+        @include mq-desktop{
+            display: flex;
+            padding: 0 40px 40px;
+        }
     }
     &__info{
         @include flex-column;
@@ -97,6 +146,10 @@ h2{
         &__items{
             @include flex-column;
             width: 100%;
+            @include mq-desktop{
+                flex-direction: row;
+                justify-content: center;
+            }
         }
         &__item{
             position: relative;
@@ -110,6 +163,12 @@ h2{
             border-radius: 20px;
             background-color: #f6f6f6;
             box-shadow: 0px 5px 10px .1px #0003;
+            @include mq-tablet{
+                width: 50%;
+            }
+            @include mq-desktop{
+                width: 300px;
+            }
         }
         &__item::before{
             position: absolute;
@@ -146,8 +205,32 @@ h2{
         width: 100%;
         padding: 30px 20px;
         background-color: #f6f6f6;
+        @include mq-tablet{
+            &__items{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+        }
+        @include mq-desktop{
+            padding: 20px 20px 0;
+            border-radius: 10px;
+        }
+        
     }
 }
+
+#info__item2{
+    @include mq-desktop{
+        margin: 0 60px;
+    }
+}
+
+#section_title__filters{
+    margin-top: 40px;
+}
+
+
 
 #info__item1::before{content: "\f3cd"}
 #info__item2::before{content: "\f0ca"}
@@ -169,6 +252,10 @@ h2{
     box-shadow: 0 0 10px #0003;
     background-color: #fff;
     transition: all .3s ease-in-out;
+    @include mq-tablet{
+        width: calc(50% - 10px);
+    }
+
 }
 .main__card:hover{
     box-shadow: 0 0 10px #0007;
@@ -327,29 +414,44 @@ a.main-town{
 
 // FOOTER
 .footer{
-    padding: 20px;
+    padding: 20px 0 20px 30px;
     background-color: #353535;
     color: #fff;
+    &__logo{
+        height: 20px;
+        margin: 10px 0;
+        @include mq-desktop{
+            margin-left: 50px;
+        }
+    }
+    &__content{
+        @include mq-desktop{
+            display: flex;
+        }
+    }
+    &__items{
+        @include mq-desktop{
+            margin-left: 100px;
+        }
+    }
+    &__item{
+        margin-bottom: 5px;
+        &:hover{
+            text-shadow: 0 0 3px #fff;
+        }
+    }
 }
-.footer__logo{
-    height: 20px;
-    margin: 10px 0;
-}
+
 .fa-utensils,
 .fa-hands-helping{
     margin-right: 7px;
     font-size: 13px;
 }
 
-.footer__item{
-    margin-bottom: 5px;
-}
-.footer__item:hover{
-    text-shadow: 0 0 3px #fff;
-}
 
 
-
-@media screen and (min-width: 768px) {
-    
+#section_title__date{
+    @include mq-desktop{
+        // margin-bottom: 0;
+    }
 }

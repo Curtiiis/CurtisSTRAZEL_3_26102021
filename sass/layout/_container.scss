@@ -4,3 +4,10 @@
     @include border($colour-accent);
 }
 
+.body{
+    &__container{
+        display: flex;
+        flex-direction: column;
+    }
+}
+

@@ -1,3 +1,15 @@
-.btn {
-    @include btn
+
+.header__button{
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0px 5px 10px .1px #0003;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: linear-gradient(to top, #9356DC, #FF79DA);
+    &:hover{
+        filter: brightness(1.1);
+    }
 }

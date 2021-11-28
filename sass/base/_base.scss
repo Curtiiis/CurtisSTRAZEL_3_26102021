@@ -17,6 +17,30 @@ a{
     text-decoration: none;
 }
 
+h1{
+    max-width: 250px;
+    @include mq-tablet{
+        max-width: 100%;
+    }
+    margin-bottom: 10px;
+}
+
+h2{
+    margin-bottom: 20px;
+}
+
+.section__title{
+        align-self: start;
+        margin-bottom: 12px;
+    }
+
 ::selection{
     background-color: none;
+}
+
+.explore{
+    text-align: center;
+    @include mq-tablet{
+        text-align: left;
+    }
 }

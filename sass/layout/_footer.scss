@@ -1,0 +1,26 @@
+// FOOTER
+
+.footer{
+    padding: 20px 0 20px 30px;
+    background-color: $clr-grey-dark;
+    &__logo{
+        height: 20px;
+        margin: 10px 0;
+        @include mq-desktop{
+            margin-left: 50px;
+        }
+    }
+    &__content{
+        @include mq-desktop{
+            display: flex;
+        }
+    }
+    &__items{
+        @include mq-desktop{
+            margin-left: 100px;
+        }
+    }
+    &__item{
+        margin-bottom: 5px;
+    }
+}

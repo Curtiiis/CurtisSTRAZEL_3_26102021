@@ -1,19 +1,16 @@
-$colour-primary: #15DEA5;
-$colour-secondary: #001534;
-$colour-accent: #D6FFF5;
-$colour-white: #fff;
-$colour-invalid: #DB464B;
+$clr-white:      #ffffff;
+$clr-black-font: #040a0c;
 
 $clr-primary:    #9356DC;
 $clr-secondary:  #FF79DA;
 $clr-tertiary:   #99E2D0;
 $clr-background: #f6f6f6;
 $clr-bg-map:     #eaeaea;
-$clr-bg-map:     #eaeaea;
-$clr-green :     #39a98e;
-$clr-green-2:    #008766;
+$clr-green:      #008766;
 $clr-pink:       #f5edff;
+$clr-grey:       #7e7e7e;
 $clr-grey-dark:  #353535;
+$clr-red:        #ff0565;
 
 $heading-shadow-size: .55rem;
 $layout-margin: 6rem;
@@ -24,4 +21,11 @@ $breakpoints:(
     desktop: 975px,
 );
 
+/* BOX-SHADOW */
+$box-shadow: 0px 5px 10px #0003;
 $box-shadow-inset: inset 0px 11px 7px -11px rgba(0,0,0,0.28);
+$box-shadow-cards: 0 0 10px #0003;
+$box-shadow-cards-hover: 0 0 10px #0007;
+
+/* TEXT SHADOW */
+$text-shadow-white: 0 0 2px $clr-white;

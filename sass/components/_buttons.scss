@@ -3,13 +3,109 @@
     padding: 12px 25px;
     border-radius: 30px;
     border: none;
-    box-shadow: 0px 5px 10px .1px #0003;
-    color: #fff;
-    font-weight: 400;
-    font-size: 1.2rem;
+    box-shadow: $box-shadow;
+    color: $clr-white;
+    font-weight: 500;
+    font-size: 1.3rem;
     cursor: pointer;
-    background: linear-gradient(to top, #9356DC, #FF79DA);
+    background: linear-gradient(to top, $clr-primary, $clr-secondary);
+    transition: all .2s ease-in-out;
     &:hover{
         filter: brightness(1.1);
+        transform: scale(1.01);
+        box-shadow: 0px 5px 10px #0007;
     }
+}
+
+
+//HEART BUTTON
+.fa-heart{
+    background-image: linear-gradient(to top, $clr-primary, $clr-secondary);
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: $clr-white;
+    -webkit-text-stroke-width: .1rem;
+    color: $clr-grey-dark;
+    font-size: 25px;
+
+    @include flex-center;
+    width: 30px;
+    height: 30px;
+
+    cursor: pointer;
+
+    transition: all .3s ease-in-out;
+}
+
+
+
+#heart__check1,
+#heart__check2,
+#heart__check3,
+#heart__check4{
+    display: none;
+    position: relative;
+    right: 70px;
+    transition: all .5s ease-in-out;
+}
+
+#heart__check1:checked ~ .heart__label  #fa-heart-1,
+#heart__check2:checked ~ .heart__label  #fa-heart-2,
+#heart__check3:checked ~ .heart__label  #fa-heart-3,
+#heart__check4:checked ~ .heart__label  #fa-heart-4{
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.heart-big{
+    @include flex-center;
+    display: none;
+    position: absolute;
+    top: -100%;
+    left: 50%;
+}
+
+.heart-big::before{
+    position: absolute;
+    content: "\f004";
+    font-family: "Font Awesome 5 Free";
+    font-size: 2rem;
+    font-weight: 900;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+
+    color: $clr-red;
+    
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.heart__check:checked ~ .heart-big{
+    display: flex;
+}
+
+#heart__check1:checked ~ .heart-big::before,
+#heart__check2:checked ~ .heart-big::before,
+#heart__check3:checked ~ .heart-big::before,
+#heart__check4:checked ~ .heart-big::before{
+    animation: heart-big .7s backwards
+}
+
+@keyframes heart-big {
+    0%{
+        opacity: 0;
+        font-size: 2rem;
+    };
+    75%{
+        opacity: 1;
+        font-size: 7rem;
+    };
+    100%{
+        opacity: 0;
+        font-size: 7rem;
+    };
 }

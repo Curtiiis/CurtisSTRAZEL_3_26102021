@@ -43,6 +43,13 @@
     align-items: center;
 }
 
+@mixin flex-center-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 @mixin flex-column {
     display: flex;
     flex-direction: column;

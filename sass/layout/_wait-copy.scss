@@ -58,8 +58,8 @@
 
 
 h1{
-    max-width: 220px;
-    @include mq-desktop{
+    max-width: 250px;
+    @include mq-tablet{
         max-width: unset;
     }
     margin-bottom: 10px;
@@ -91,7 +91,7 @@ h2{
     &__item{
         position: relative;
         max-width: 100%;
-        min-width: 300px;
+        min-width: 330px;
         margin: 12px 10px;
         padding: 20px;
         border-radius: 20px;
@@ -120,6 +120,9 @@ h2{
 
 .main__aside{
     display: none;
+    background-color: $clr-background;
+    border-radius: 20px;
+    padding: 0 20px;
     @include mq-desktop{
         display: block;
         width: 330px;
@@ -142,7 +145,7 @@ h2{
         height: 1.7rem;
     }
     &__section{
-        margin-top: 20px;
+        margin: 20px 0 40px;
     }
 }
 
@@ -162,28 +165,8 @@ h2{
     }        
 }
 
-// #info__item2{
-//     @include mq-desktop{
-//         margin: 0 60px;
-//     }
-// }
 
-#section_title__filters{
-    margin-top: 40px;
-}
-
-
-
-#info__item1::before{content: "\f3cd"}
-#info__item2::before{content: "\f0ca"}
-#info__item3::before{content: "\f54e"}
-
-#info__item1::after{content: "1"}
-#info__item2::after{content: "2"}
-#info__item3::after{content: "3"}
-
-
-.main__card{
+.main__cards{
     position: relative;
 
     width: 100%;    
@@ -191,41 +174,51 @@ h2{
     margin-bottom: 25px;
 
     border-radius: 20px;
-    box-shadow: 0 0 10px #0003;
-    background-color: #fff;
-    transition: all .3s ease-in-out;
+    box-shadow: $box-shadow-cards;
+    background-color: $clr-white;
+    transition: transform .2s ease-in-out;
     @include mq-tablet{
         width: calc(50% - 10px);
     }
+    &__content{
+        @include flex-center;
+        justify-content: space-between;
+        position: relative;
+        height: 80px;
+        padding: 0 15px;
+    }
+    &__description{
+        width: 90%;
+        height: 100%;
+    }
+    &__title{
+        height: 40%;
+        padding-top: 15px;
+    }
+    &__town{
+        height: 35%;
+    }
+    &__links{
+        height: 175px;
+    }
+    &__picture{
+        position: relative;
+        display: block;
+        height: 100%;
+    }
+    &__img{
+        width: 100%;
+        height: 100%;  
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+    }
+    &:hover{
+        box-shadow: $box-shadow-cards-hover;
+        transform: scale(1.01);
+    }
+}
 
-}
-.main__card:hover{
-    box-shadow: 0 0 10px #0007;
-    transform: scale(1.01);
-}
 
-.main__cards__content{
-    @include flex-center;
-    justify-content: space-between;
-    position: relative;
-    height: 80px;
-    padding: 10px 15px;
-}
-.main-links{
-    height: 175px;
-}
-
-.main-picture{
-    position: relative;
-    display: block;
-    height: 100%;
-}
-.main__cards__img{
-    width: 100%;
-    height: 100%;  
-    object-fit: cover;
-    border-radius: 20px 20px 0 0;
-}
 
 //INFO - NOUVEAU
 #main__card1::before,
@@ -240,9 +233,9 @@ h2{
     font-size: 1rem;
     font-weight: 500;
     letter-spacing: .07em;
+    border-radius: 3px;
     color: $clr-green;
     background-color: $clr-tertiary;
-    border-radius: 3px;
 }
 
 
@@ -250,8 +243,7 @@ h2{
 // FOOTER
 .footer{
     padding: 20px 0 20px 30px;
-    background-color: #353535;
-    color: #fff; ////////
+    background-color: $clr-grey-dark;
     &__logo{
         height: 20px;
         margin: 10px 0;
@@ -271,22 +263,6 @@ h2{
     }
     &__item{
         margin-bottom: 5px;
-        &:hover{
-            text-shadow: 0 0 3px #fff; ////////
-        }
     }
 }
 
-.fa-utensils,
-.fa-hands-helping{
-    margin-right: 7px;
-    font-size: 13px;
-}
-
-
-
-#section_title__date{
-    @include mq-desktop{
-        // margin-bottom: 0;
-    }
-}

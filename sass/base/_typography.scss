@@ -1,24 +1,92 @@
+// BASE
 body {
     font-family: 'Roboto', sans-serif;
-    // color: $colour-primary;
-    font-size: 1.4rem;
+    font-size: 10px;
     font-weight: 400;
     line-height: 1.5;
-}
-
-h1 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    font-size: 1.8rem;
-}
-
-h2{
-    font-size: 1.6rem;
-    font-weight: 100;
+    color: $clr-black-font;
 }
 
 button {
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
-    font-size: 1.4rem;
 }
+
+
+.section__title, h1{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h2{
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+
+// HEADER
+.header{
+    &__address{
+        color: $clr-grey-dark;
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+    &__explore{
+        text-align: center;
+        @include mq-tablet{
+            text-align: left;
+        }
+    }
+}
+
+
+// MAIN
+.main__info{
+    &__item{
+        font-size: 1.4rem;
+        font-weight: 500;
+        text-align: center;
+        letter-spacing: .03rem;
+    }
+}
+
+.main__aside{
+    &__item{
+        font-size: 1.4rem;
+    }
+}
+
+.main__cards{
+    &__title{
+        font-size: 1.6rem;
+        font-weight: 600;
+        letter-spacing: .01rem;
+        line-height: 1.5rem;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    &__town{
+        font-size: 1.4rem;
+        font-weight: 300;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    &__links:hover ~ .main__cards__content .main__cards__title{
+        text-decoration: underline;
+    }
+}
+
+
+// FOOTER
+.footer{
+    color: $clr-white;
+    &__item{
+        font-size: 1.3rem;
+        &:hover{
+            text-shadow: $text-shadow-white;
+        }
+    }
+}
+

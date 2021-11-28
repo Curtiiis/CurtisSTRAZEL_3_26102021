@@ -11,7 +11,8 @@
     <!-- IMPORT FONTS -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');    </style> 
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');    
+    </style> 
 
     <!-- IMPORT CSS -->
     <link rel="stylesheet" href="public/css/style.css">
@@ -40,7 +41,7 @@
                 <div class="header__explore">
                     <h1>Réservez le menu qui vous convient</h1>
                     <h2>Découvrez des restaurants d’exception, sélectionnés par nos soins.</h2>
-                    <button type="submit" class="header__button">Explorer nos restaurants</button>
+                    <a href="#" type="submit" class="header__button">Explorer nos restaurants</a>
                 </div>
             </div>
         </header>
@@ -48,7 +49,7 @@
         <main class="main">
             <div class="main__info">
                 <p class="section__title">
-                    <strong>Fonctionnement</strong>
+                    Fonctionnement
                 </p>
                 <div class="main__info__items">
                     <p class="main__info__item" id="info__item1">Choisissez un restaurant</p>
@@ -68,7 +69,7 @@
 
                         <!-- Réserver pour - Title -->
                         <p class="section__title" id="section_title__date">
-                            <strong>Réserver pour</strong>
+                            Réserver pour
                         </p>
 
                         <!-- Réserver pour - Items -->
@@ -98,7 +99,7 @@
 
                         <!-- Filtres - Title -->
                         <p class="section__title" id="section_title__filters">
-                            <strong>Filtres</strong>
+                            Filtres
                         </p>
 
                         <!-- Filtres - Items -->
@@ -143,76 +144,69 @@
 
                     <!-- Restaurants - Title -->
                     <p class="section__title">
-                        <strong>Restaurants</strong>
+                        Restaurants
                     </p>
 
                     <!-- Restaurants - Items -->
                     <div class="main__restaurants__items">
 
                         <!-- Restaurants - Card 1 -->
-                        <div class="main__card" id="main__card1">
+                        <div class="main__cards" id="main__card1">
                             
                             <!-- CARD IMAGE -->
-                            <a class="main-links" href="#hop">
-                                <picture class="main-picture">
+                            <a class="main__cards__links" href="#restaurant">
+                                <picture class="main__picture">
                                     <source media="(max-width: 700px)" srcset="public/images/restaurants/1/mobile.jpg 1x">
                                     <source media="(max-width: 950px)" srcset="public/images/restaurants/1/tablet.jpg 2x">
-                                    <img class="main-img" src="public/images/restaurants/1/desktop.jpg"  alt="Image du restaurant La palette du goût">  
+                                    <img class="main__cards__img" src="public/images/restaurants/1/desktop.jpg"  alt="Image du restaurant La palette du goût">  
                                 </picture> 
                             </a> 
 
                             <!-- CARD DESCRIPTION -->                        
-                            <div class="main-cards-content">
-                                <div>
-                                    <a href="#hop" class="main-cards-title">
-                                        <strong>La palette du goût</strong>
+                            <div class="main__cards__content">
+                                <div class="main__cards__description">
+                                    <a href="#restaurant" class="main__cards__title">
+                                        La palette du goût
                                     </a>
-                                    <a href="#town" class="main-town">Ménilmontant</a>
+                                    <a href="#town" class="main__cards__town">Ménilmontant</a>
                                 </div>
 
                                 <!-- CARD HEART -->
-                                <!-- <form action="post" class="heart__form">
-                                    <input type="checkbox" id="heart__check1">
+                                <form action="post" class="heart__form">
+                                    <input type="checkbox" class="heart__check" id="heart__check1">
                                     <label for="heart__check1" class="heart__label">
                                         <i class="fas fa-heart" id="fa-heart-1"></i>
                                     </label>
                                     <span class="heart-big"></span>
-                                </form> -->
-
-                                <input type="checkbox" id="heart__check">
-                                <label for="heart__check" class="heart__label">
-                                    <i class="fas fa-heart" id="heart--grey"></i>
-                                    <img class="heart-pink" src="public/images/icons/heart-solid-pink.png" alt="">
-                                    <i class="fas fa-heart" id="heart--pink"></i>
-                                </label>
+                                </form>
                             </div>
                         </div>
 
 
                         <!-- Restaurants - Card 2 -->
-                        <div class="main__card" id="main__card2">
+                        <div class="main__cards" id="main__card2">
 
                             <!-- CARD IMAGE -->
-                            <a class="main-links" href="#hop">
-                                <picture class="main-picture">
+                            <a class="main__cards__links" href="#restaurant">
+                                <picture class="main__picture">
                                     <source media="(max-width: 700px)" srcset="public/images/restaurants/2/mobile.jpg 1x">
                                     <source media="(max-width: 950px)" srcset="public/images/restaurants/2/tablet.jpg 2x">
-                                    <img class="main-img" src="public/images/restaurants/2/desktop.jpg"  alt="Image du restaurant La note enchantée">  
+                                    <img class="main__cards__img" src="public/images/restaurants/2/desktop.jpg"  alt="Image du restaurant La note enchantée">  
                                 </picture> 
                             </a> 
 
                             <!-- CARD DESCRIPTION -->                        
-                            <div class="main-cards-content">
-                                <div>
-                                    <a href="#hop" class="main-cards-title">
-                                        <strong>La note enchantée</strong>
+                            <div class="main__cards__content">
+                                <div class="main__cards__description">
+                                    <a href="#restaurant" class="main__cards__title">
+                                        La note enchantée
                                     </a>
-                                    <a href="#town" class="main-town">Charonne</a>
+                                    <a href="#town" class="main__cards__town">Charonne</a>
                                 </div>
 
                                 <!-- CARD HEART -->
                                 <form action="post" class="heart__form">
-                                    <input type="checkbox" id="heart__check2">
+                                    <input type="checkbox" class="heart__check" id="heart__check2">
                                     <label for="heart__check2" class="heart__label">
                                         <i class="fas fa-heart" id="fa-heart-2"></i>
                                     </label>
@@ -223,29 +217,29 @@
 
 
                         <!-- Restaurants - Card 3 -->
-                        <div class="main__card" id="main__card3">
+                        <div class="main__cards" id="main__card3">
                             
                             <!-- CARD IMAGE -->
-                            <a class="main-links" href="#hop">
-                                <picture class="main-picture">
+                            <a class="main__cards__links" href="#restaurant">
+                                <picture class="main__picture">
                                     <source media="(max-width: 700px)" srcset="public/images/restaurants/3/mobile.jpg 1x">
                                     <source media="(max-width: 950px)" srcset="public/images/restaurants/3/tablet.jpg 2x">
-                                    <img class="main-img" src="public/images/restaurants/3/desktop.jpg"  alt="Image du restaurant A la française">  
+                                    <img class="main__cards__img" src="public/images/restaurants/3/desktop.jpg"  alt="Image du restaurant A la française">  
                                 </picture> 
                             </a> 
 
                             <!-- CARD DESCRIPTION -->                        
-                            <div class="main-cards-content">
-                                <div>
-                                    <a href="#hop" class="main-cards-title">
-                                        <strong>À la française</strong>
+                            <div class="main__cards__content">
+                                <div class="main__cards__description">
+                                    <a href="#restaurant" class="main__cards__title">
+                                        À la française
                                     </a>
-                                    <a href="#town" class="main-town">Cité Rouge</a>
+                                    <a href="#town" class="main__cards__town">Cité Rouge</a>
                                 </div>
 
                                 <!-- CARD HEART -->
                                 <form action="post" class="heart__form">
-                                    <input type="checkbox" id="heart__check3">
+                                    <input type="checkbox" class="heart__check" id="heart__check3">
                                     <label for="heart__check3" class="heart__label">
                                         <i class="fas fa-heart" id="fa-heart-3"></i>
                                     </label>
@@ -256,29 +250,29 @@
 
 
                         <!-- Restaurants - Card 4 -->
-                        <div class="main__card" id="main__card4">
+                        <div class="main__cards" id="main__card4">
                             
                             <!-- CARD IMAGE -->
-                            <a class="main-links" href="#hop">
-                                <picture class="main-picture">
+                            <a class="main__cards__links" href="#restaurant">
+                                <picture class="main__picture">
                                     <source media="(max-width: 700px)" srcset="public/images/restaurants/4/mobile.jpg 1x">
                                     <source media="(max-width: 950px)" srcset="public/images/restaurants/4/tablet.jpg 2x">
-                                    <img class="main-img" src="public/images/restaurants/4/desktop.jpg"  alt="Image du restaurant Le délice des sens">  
+                                    <img class="main__cards__img" src="public/images/restaurants/4/desktop.jpg"  alt="Image du restaurant Le délice des sens">  
                                 </picture> 
                             </a> 
 
                             <!-- CARD DESCRIPTION -->                        
-                            <div class="main-cards-content">
-                                <div>
-                                    <a href="#hop" class="main-cards-title">
-                                        <strong>Le délice des sens</strong>
+                            <div class="main__cards__content">
+                                <div class="main__cards__description">
+                                    <a href="#restaurant" class="main__cards__title">
+                                        Le délice des sens
                                     </a>
-                                    <a href="#town" class="main-town">Folie-Méricourt</a>
+                                    <a href="#town" class="main__cards__town">Folie-Méricourt</a>
                                 </div>
 
                                 <!-- CARD HEART -->
                                 <form action="post" class="heart__form">
-                                    <input type="checkbox" id="heart__check4">
+                                    <input type="checkbox" class="heart__check" id="heart__check4">
                                     <label for="heart__check4" class="heart__label">
                                         <i class="fas fa-heart" id="fa-heart-4"></i>
                                     </label>

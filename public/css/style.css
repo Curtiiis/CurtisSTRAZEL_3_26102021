@@ -704,11 +704,13 @@ a.main-town {
   background-size: cover;
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-stroke-width: 0.1rem;
   color: transparent;
   font-size: 25px;
-  font-size: 26px;
-  opacity: 0;
+}
+
+.heart-pink {
+  width: 25px;
+  height: 22px;
 }
 
 #heart__check {
@@ -718,10 +720,6 @@ a.main-town {
 #heart__check:checked ~ .heart__label #heart--grey {
   color: transparent;
   -webkit-text-fill-color: transparent;
-}
-
-#heart__check:checked ~ .heart__label #heart--pink {
-  opacity: 1;
 }
 
 #heart__check1,

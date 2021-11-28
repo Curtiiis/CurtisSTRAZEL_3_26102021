@@ -391,11 +391,14 @@ a.main-town{
     background-size: cover;
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-stroke-width: .1rem;
     color: transparent;
     font-size: 25px;
-    font-size: 26px;
-    opacity: 0;
+    // opacity: 0;
+}
+
+.heart-pink{
+    width: 25px;
+    height: 22px;
 }
 
 #heart__check{
@@ -406,7 +409,7 @@ a.main-town{
     -webkit-text-fill-color: transparent;
 }
 #heart__check:checked ~ .heart__label #heart--pink{
-    opacity: 1;
+    // opacity: 1;
 }
 //
 

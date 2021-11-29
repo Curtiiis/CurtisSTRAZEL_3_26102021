@@ -29,6 +29,8 @@
         position: relative;
         width: min-content;
         margin: 30px 0 20px;
+        transform: translateY(20px);
+        opacity: 0;
         &::before{
             display: block;
             position: absolute;
@@ -147,23 +149,62 @@
 .store__menu__header{
     @include flex-center;
     justify-content: space-evenly;
+    @include mq-desktop{
+        justify-content: space-around;
+    }
 }
 
 .store__name{
     max-width: 100%;
     margin-bottom: 0;
 }
+#store__name--2{
+    display: none;
+    @include mq-desktop{
+        display: block;
+    }
+}
+
+.store__infos{
+    position: relative;
+    @include mq-desktop{
+        position: absolute;
+        top: -165px;
+        font-size: 2rem;
+        color: $clr-white;
+        padding: 10px;
+        left: 0;
+        background-color: #6669;
+        border-radius: 15px;
+        backdrop-filter: blur(2px);
+    }
+}
+.store__time{
+    display: none;
+    @include mq-desktop{
+        display: block;
+    }
+}
+
+
 
 
 
 // ANIMATION ITEM SLIDE-UP
-$slideUp-delay: .2s;
+$slideUp-delay: .1s;
 
+.store__menu__title,
 .store__menu__item{
     animation: item-slideUp 1s ease-out forwards;
 }
 
-@for $i from 1 to 9 {
+#menu__title{
+    &--1{animation-delay: calc($slideUp-delay * 1);}
+    &--2{animation-delay: calc($slideUp-delay * 4);}
+    &--3{animation-delay: calc($slideUp-delay * 8);}
+}
+
+@for $i from 1 to 10 {
     #menu__item#{$i}{
         animation-delay: calc($slideUp-delay * $i);
     }

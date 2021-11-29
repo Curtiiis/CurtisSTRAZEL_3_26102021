@@ -64,14 +64,21 @@ button {
 }
 
 .section__title, h1 {
-  font-family: "Shrikhand", sans-serif;
   font-size: 2rem;
+  font-weight: 400;
   font-weight: 700;
 }
 
 .store__name {
+  font-family: "Shrikhand", sans-serif;
   font-size: 2.2rem;
   font-weight: 400;
+}
+.store__time {
+  color: #99E2D0;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #bdffee;
 }
 
 h2 {
@@ -237,6 +244,13 @@ h2 {
 
 #fa-heart-r1 {
   -webkit-text-fill-color: #f6f6f6;
+}
+
+@media screen and (min-width: 975px) {
+  .heart__form {
+    position: absolute;
+    right: 50px;
+  }
 }
 
 .heart__check {
@@ -722,11 +736,6 @@ h2 {
 .main__cards__links {
   height: 175px;
 }
-.main__cards__picture {
-  position: relative;
-  display: block;
-  height: 100%;
-}
 .main__cards__img {
   width: 100%;
   height: 100%;
@@ -770,6 +779,9 @@ h2 {
 
 .main__cards__img--2 {
   border-radius: unset;
+}
+.main__cards__picture--2 {
+  height: 300px;
 }
 
 .footer {
@@ -826,6 +838,8 @@ h2 {
   position: relative;
   width: min-content;
   margin: 30px 0 20px;
+  transform: translateY(20px);
+  opacity: 0;
 }
 .store__menu__title::before {
   display: block;
@@ -930,46 +944,101 @@ h2 {
   align-items: center;
   justify-content: space-evenly;
 }
+@media screen and (min-width: 975px) {
+  .store__menu__header {
+    justify-content: space-around;
+  }
+}
 
 .store__name {
   max-width: 100%;
   margin-bottom: 0;
 }
 
+#store__name--2 {
+  display: none;
+}
+@media screen and (min-width: 975px) {
+  #store__name--2 {
+    display: block;
+  }
+}
+
+.store__infos {
+  position: relative;
+}
+@media screen and (min-width: 975px) {
+  .store__infos {
+    position: absolute;
+    top: -165px;
+    font-size: 2rem;
+    color: #ffffff;
+    padding: 10px;
+    left: 0;
+    background-color: #6669;
+    border-radius: 15px;
+    backdrop-filter: blur(2px);
+  }
+}
+
+.store__time {
+  display: none;
+}
+@media screen and (min-width: 975px) {
+  .store__time {
+    display: block;
+  }
+}
+
+.store__menu__title,
 .store__menu__item {
   animation: item-slideUp 1s ease-out forwards;
 }
 
-#menu__item1 {
-  animation-delay: 0.2s;
+#menu__title--1 {
+  animation-delay: 0.1s;
 }
-
-#menu__item2 {
+#menu__title--2 {
   animation-delay: 0.4s;
 }
-
-#menu__item3 {
-  animation-delay: 0.6s;
-}
-
-#menu__item4 {
+#menu__title--3 {
   animation-delay: 0.8s;
 }
 
+#menu__item1 {
+  animation-delay: 0.1s;
+}
+
+#menu__item2 {
+  animation-delay: 0.2s;
+}
+
+#menu__item3 {
+  animation-delay: 0.3s;
+}
+
+#menu__item4 {
+  animation-delay: 0.4s;
+}
+
 #menu__item5 {
-  animation-delay: 1s;
+  animation-delay: 0.5s;
 }
 
 #menu__item6 {
-  animation-delay: 1.2s;
+  animation-delay: 0.6s;
 }
 
 #menu__item7 {
-  animation-delay: 1.4s;
+  animation-delay: 0.7s;
 }
 
 #menu__item8 {
-  animation-delay: 1.6s;
+  animation-delay: 0.8s;
+}
+
+#menu__item9 {
+  animation-delay: 0.9s;
 }
 
 @keyframes item-slideUp {

@@ -135,11 +135,6 @@
     &__links{
         height: 175px;
     }
-    &__picture{
-        position: relative;
-        display: block;
-        height: 100%;
-    }
     &__img{
         width: 100%;
         height: 100%;  
@@ -184,6 +179,11 @@
 
 
 // PAGE RESTAURANT
-.main__cards__img--2{
-    border-radius: unset;
+.main__cards{
+    &__img--2{
+        border-radius: unset;
+    }
+    &__picture--2{
+        height: 300px;
+    }
 }

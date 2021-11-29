@@ -77,6 +77,13 @@
     -webkit-text-fill-color: $clr-background;
 }
 
+.heart__form{
+    // position: relative;
+    @include mq-desktop{
+        position: absolute;
+        right: 50px;
+    }
+}
 .heart__check{
     display: none;
     position: relative;

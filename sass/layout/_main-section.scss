@@ -125,19 +125,24 @@
         height: 100%;
     }
     &__title{
-        height: 40%;
-        padding-top: 15px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
     }
     &__town{
         height: 35%;
         margin-top: 5px;
     }
     &__links{
-        height: 175px;
+        &:hover .main__cards__content .main__cards__title span{
+            text-decoration: underline;
+        }
     }
     &__img{
         width: 100%;
-        height: 100%;  
+        height: 175px;  
         object-fit: cover;
         border-radius: 20px 20px 0 0;
     }
@@ -182,8 +187,6 @@
 .main__cards{
     &__img--2{
         border-radius: unset;
-    }
-    &__picture--2{
         height: 300px;
     }
 }

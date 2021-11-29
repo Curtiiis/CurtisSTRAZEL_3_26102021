@@ -1,19 +1,30 @@
 
 
 .store__cards{
-    // position: relative;
+    display: flex;
+    justify-content: space-evenly;
     width: 100%;
-    max-width: 400px;
+    max-width: $width-store-ctnr;
+    margin: 0 auto;
+}
+
+#store__cmd{
+    display: none;
+    @include mq-desktop{
+        display: block;
+    }
 }
 
 .store__menu{
-    // position: absolute;
-    // top: -60px;
     position: relative;
     width: 100%;
     max-width: 400px;
-    padding: 0 15px;
+    padding: 30px 20px 15px;
     background-color: $clr-background;
+    @include mq-desktop{
+        padding: 30px 40px 15px;
+        box-sizing: content-box;
+    }
     &::before{
         display: block;
         position: absolute;
@@ -22,7 +33,7 @@
         content: "";
         width: 100%;
         height: 50px;
-        background-color: #f6f6f6;
+        background-color: $clr-background;
         border-radius: 40px 40px 0 0;
     }
     &__title{
@@ -58,14 +69,23 @@
         &:hover{
             box-shadow: $box-shadow-cards-hover;
         }
+        &--2:hover{
+            box-shadow: $box-shadow-cards;
+            cursor: default
+        }
+        &__container{
+            @include flex-center;
+            height: 75px;
+            margin: 20px 0;
+        }
     }
     &__check{
-        // display: none;
         position: absolute;
         width: 100%;
-        height: 100%;
+        height: 75px;
         opacity: 0;
         cursor: pointer;
+        z-index: 10;
     }
     &__description{
         display: flex;
@@ -91,7 +111,7 @@
         margin-right: 20px;
         &__icon{
             display: flex;
-            width: 11%;
+            width: 10%;
             transition: width .4s ease-out;
         }
     }
@@ -104,46 +124,64 @@
         background-color: $clr-tertiary;
         transition: transform .4s ease-out;
         }
+    &__number{
+        font-size: 1.4rem;
+        font-weight: 500;
+        &__container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 25%;
+            margin-left: 20px;
+        }
+    }
+    &__sign{
+        @include flex-center;
+        font-size: 1.4rem;
+        font-weight: 500;
+        background-color: $clr-tertiary;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+        &:hover{
+            box-shadow: $box-shadow-cards-hover;
+        }
+    }
+    &__total{
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-align: right;
+        margin: 30px 5px;
+        &--2{
+            margin-left: 15px;
+        }
+    }
 }
+
+
+
 
 .fa-check-circle{
     color: $clr-white;
     font-size: 2rem;
     transition: transform .4s ease-out;
-    // transform: rotate(1turn);
 }
 
 
 .store__menu__check:hover ~ .store__menu__price__icon .store__menu__icon{
     transform: translateX(0px);
-    // animation: item-translate .5s ease-out forwards;
 }
 .store__menu__check:hover ~ .store__menu__price__icon .store__menu__icon .fa-check-circle{
     transform: rotate(1turn);
-    // animation: item-rotate .5s ease-out forwards;
 }
 .store__menu__check:hover + .store__menu__description{
     width: 66%;
-    // animation: item-check .5s ease-out forwards;
 }
 .store__menu__check:hover ~ .store__menu__price__icon{
     width: 110px;
 }
 
-// @keyframes item-check {
-//     0%{width: 85%};
-//     100%{width: 66%};
-// }
-
-// @keyframes item-translate {
-//     0%{transform: translateX(80px)};
-//     100%{transform: translateX(0px)};
-// }
-
-// @keyframes item-rotate {
-//     0%{transform: rotate(0turn)};
-//     100%{transform: rotate(2turn)};
-// }
 
 
 .store__menu__header{
@@ -204,7 +242,7 @@ $slideUp-delay: .1s;
     &--3{animation-delay: calc($slideUp-delay * 8);}
 }
 
-@for $i from 1 to 10 {
+@for $i from 1 to 11 {
     #menu__item#{$i}{
         animation-delay: calc($slideUp-delay * $i);
     }

@@ -3,6 +3,7 @@
 .footer{
     padding: 20px 0 20px 30px;
     background-color: $clr-grey-dark;
+    width: 100%;
     &__logo{
         height: 20px;
         margin: 10px 0;
@@ -13,6 +14,13 @@
     &__content{
         @include mq-desktop{
             display: flex;
+        }
+    }
+    &__content--2{
+        max-width: 400px;
+        margin: 0 auto;
+        @include mq-desktop{
+            max-width: $width-store-ctnr;
         }
     }
     &__items{

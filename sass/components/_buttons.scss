@@ -21,7 +21,7 @@
         }
 }
 
-// BOUTON 'Explorer nos restaurants'
+// BOUTON
 .menu__button,
 .explore__button{
     padding: 12px 25px;
@@ -46,10 +46,21 @@
     margin: 50px auto;
     width: 200px;
     height: 50px;
+    @include mq-desktop{
+        display: none;
+    }
     &__container{
         display: flex;
         justify-content: center;
     }
+}
+
+#menu__button--cmd{
+    display: block;
+    border-radius: 20px;
+    height: 60px;
+    width: 80%;
+    font-size: 1.5rem;
 }
 
 
@@ -77,13 +88,13 @@
     -webkit-text-fill-color: $clr-background;
 }
 
-.heart__form{
-    // position: relative;
+.heart__form--2{
     @include mq-desktop{
         position: absolute;
         right: 50px;
     }
 }
+
 .heart__check{
     display: none;
     position: relative;

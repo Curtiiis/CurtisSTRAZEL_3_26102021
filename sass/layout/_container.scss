@@ -3,7 +3,8 @@
     &__container{
         display: flex;
         flex-direction: column;
-        max-width: 1250px;
+        // max-width: 1250px;
+        max-width: 1600px;
         margin: 0 auto;
         box-shadow: 0 0 10px #0005;
     }
@@ -11,7 +12,8 @@
 
 
 .content__container{
-    @include flex-center;
+    display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     position: relative;
 }

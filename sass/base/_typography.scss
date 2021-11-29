@@ -24,6 +24,7 @@ button {
         font-family: 'Shrikhand', sans-serif;
         font-size: 2.2rem;
         font-weight: 400;
+        letter-spacing: .15rem;
     }
     &__time{
         color: #99E2D0;
@@ -83,18 +84,15 @@ h2{
         font-weight: 600;
         letter-spacing: .01rem;
         line-height: 1.5rem;
-        &:hover{
+        &:hover span{
             text-decoration: underline;
         }
     }
     &__town{
         font-size: 1.4rem;
         font-weight: 300;
-        &:hover{
-            text-decoration: underline;
-        }
     }
-    &__links:hover ~ .main__cards__content .main__cards__title{
+    &__links:hover ~ .main__cards__content .main__cards__title span{
         text-decoration: underline;
     }
 }

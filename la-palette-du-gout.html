@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- INITIALISATION FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/6dd7ccfc27.js" crossorigin="anonymous" ></script>
+
+    <!-- IMPORT FONTS -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');    
+    </style> 
+
+    <!-- IMPORT CSS -->
+    <link rel="stylesheet" href="public/css/style.css">
+
+    <title>OhMyFood</title>
+</head>
+
+<body>
+    <!-- BODY CONTAINER -->
+    <div class="body__container">
+
+        <!-- HEADER -->
+        <header>
+            <div class="header__content">
+                <nav class="header__nav">
+
+                    <!-- Logo -->
+                    <div class="header__logo">
+                        <a href="index.html" class="header__previous">
+                            <i class="fas fa-arrow-left"></i> 
+                        </a>
+                        <a href="#" class="header__logo__link">
+                            <img class="header__logo__img" src="public/images/logo/ohmyfood@2x.svg" alt="Logo du site">
+                        </a>
+                    </div>
+
+                    <!-- Recherche et Langue -->
+                    <div class="header__others">
+                        <div class="header__localisation--2">
+                            <form action="get" class="header__form">
+                                <input type="text" placeholder="Paris, Belleville" class="header__address">
+                            </form>
+                        </div>
+                        <a href="index.html" class="header__languages">
+                            <img src="public/images/logo/en-flag.png" alt="">
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- BACKGROUND IMAGE RESTAURANT -->
+        <picture class="main__picture">
+            <source media="(max-width: 700px)" srcset="public/images/restaurants/1/mobile.jpg 1x">
+            <source media="(max-width: 950px)" srcset="public/images/restaurants/1/tablet.jpg 2x">
+            <img class="main__cards__img main__cards__img--2" src="public/images/restaurants/1/desktop.jpg"  alt="Image du restaurant La palette du goût">  
+        </picture> 
+
+        <!-- CONTENT CONTAINER -->
+        <div class="content__container">
+            
+            <div class="store__cards">
+
+                <!-- MENU CARD -->
+                <div class="store__menu">
+                    
+                    <!-- EN-TETE DE LA CARD 'MENU' -->
+                    <div class="store__menu__header">
+                        <div class="store__infos">
+                            <h1 class="store__name">La palette du goût</h1>
+                            <!-- <p class="store__time">Ouvert jusqu'à 23h00</p> -->
+                        </div>
+            
+                        <!-- CARD HEART -->
+                        <form action="post" class="heart__form">
+                            <input type="checkbox" class="heart__check" id="heart__check__r1">
+                            <label for="heart__check__r1" class="heart__label">
+                                <i class="fas fa-heart" id="fa-heart-r1"></i>
+                            </label>
+                            <span class="heart-big-2"></span>
+                        </form>
+                    </div>
+
+                    <!-- CORPS DE LA CARD 'MENU' -->
+
+                    <!-- CARD TIME -->
+                    <div class="store__menu__time">
+                        <p class="store__menu__title">ENTRÉES</p>
+                        
+                        <form action="post">
+                            <!-- CARD ITEM -->
+                            <label class="store__menu__item">
+                                <input type="checkbox" class="store__menu__check" id="menu__check1">
+                                <div class="store__menu__description">
+                                    <p class="store__menu__description--1">Fricassée d'escargot</p>
+                                    <p class="store__menu__description--2">Assaisonné à la truffe sur lit de caviar</p>
+                                </div>
+                                <div class="store__menu__price__icon">
+                                    <p class="store__menu__price">25€</p>
+                                    <span class="store__menu__icon">
+                                        <i class="fas fa-check-circle"></i> 
+                                    </span>
+                                </div>
+                            </label>
+
+                            <!-- CARD ITEM -->
+                            <label class="store__menu__item">
+                                <input type="checkbox" class="store__menu__check" id="menu__check1">
+                                <div class="store__menu__description">
+                                    <p class="store__menu__description--1">Foie gras de canard mi-cuit</p>
+                                    <p class="store__menu__description--2">Et ses copeaux de truffe noire</p>
+                                </div>
+                                <div class="store__menu__price__icon">
+                                    <p class="store__menu__price">35€</p>
+                                    <span class="store__menu__icon">
+                                        <i class="fas fa-check-circle"></i> 
+                                    </span>
+                                </div>
+                            </label>
+
+                            <!-- CARD ITEM -->
+                            <label class="store__menu__item">
+                                <input type="checkbox" class="store__menu__check" id="menu__check1">
+                                <div class="store__menu__description">
+                                    <p class="store__menu__description--1">Oeuf au plat</p>
+                                    <p class="store__menu__description--2">Assaisonné à la truffe sur lit de caviar</p>
+                                </div>
+                                <div class="store__menu__price__icon">
+                                    <p class="store__menu__price">20€</p>
+                                    <span class="store__menu__icon">
+                                        <i class="fas fa-check-circle"></i> 
+                                    </span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- CARD TIME -->
+                        <div class="store__menu__time">
+                            <p class="store__menu__title">PLATS</p>
+
+                            <!-- CARD ITEM -->
+                            <label class="store__menu__item">
+                                <input type="checkbox" class="store__menu__check" id="menu__check1">
+                                <div class="store__menu__description">
+                                    <p class="store__menu__description--1">Filet de boeuf aux herbes</p>
+                                    <p class="store__menu__description--2">Accompagné de sa ribambelle de légumes</p>
+                                </div>
+                                <div class="store__menu__price__icon">
+                                    <p class="store__menu__price">40€</p>
+                                    <span class="store__menu__icon">
+                                        <i class="fas fa-check-circle"></i> 
+                                    </span>
+                                </div>
+                            </label>
+
+                            <!-- CARD ITEM -->
+                            <label class="store__menu__item">
+                                <input type="checkbox" class="store__menu__check" id="menu__check1">
+                                <div class="store__menu__description">
+                                    <p class="store__menu__description--1">Parmentier de queue de boeuf</p>
+                                    <p class="store__menu__description--2">À la truffe noire sur sa purée de panais</p>
+                                </div>
+                                <div class="store__menu__price__icon">
+                                    <p class="store__menu__price">35€</p>
+                                    <span class="store__menu__icon">
+                                        <i class="fas fa-check-circle"></i> 
+                                    </span>
+                                </div>
+                            </label>
+
+                            <!-- CARD ITEM -->
+                            <label class="store__menu__item">
+                                <input type="checkbox" class="store__menu__check" id="menu__check1">
+                                <div class="store__menu__description">
+                                    <p class="store__menu__description--1">Filet de turbot</p>
+                                    <p class="store__menu__description--2">Aux agrumes</p>
+                                </div>
+                                <div class="store__menu__price__icon">
+                                    <p class="store__menu__price">44€</p>
+                                    <span class="store__menu__icon">
+                                        <i class="fas fa-check-circle"></i> 
+                                    </span>
+                                </div>
+                            </label>
+                        </div>
+
+
+                        <!-- CARD TIME -->
+                        <div class="store__menu__time">
+                            <p class="store__menu__title">DESSERTS</p>
+
+                            <!-- CARD ITEM -->
+                            <label class="store__menu__item">
+                                <input type="checkbox" class="store__menu__check" id="menu__check1">
+                                <div class="store__menu__description">
+                                    <p class="store__menu__description--1">Paris-Brest</p>
+                                    <p class="store__menu__description--2">Revisité</p>
+                                </div>
+                                <div class="store__menu__price__icon">
+                                    <p class="store__menu__price">18€</p>
+                                    <span class="store__menu__icon">
+                                        <i class="fas fa-check-circle"></i> 
+                                    </span>
+                                </div>
+                            </label>
+
+                            <!-- CARD ITEM -->
+                            <label class="store__menu__item">
+                                <input type="checkbox" class="store__menu__check" id="menu__check1">
+                                <div class="store__menu__description">
+                                    <p class="store__menu__description--1">Macaron au chocolat d'exception </p>
+                                    <p class="store__menu__description--2">Et glace à la vanille de Madagascar</p>
+                                </div>
+                                <div class="store__menu__price__icon">
+                                    <p class="store__menu__price">22€</p>
+                                    <span class="store__menu__icon">
+                                        <i class="fas fa-check-circle"></i> 
+                                    </span>
+                                </div>
+                            </label>
+
+                            <!-- CARD ITEM -->
+                            <label class="store__menu__item">
+                                <input type="checkbox" class="store__menu__check" id="menu__check1">
+                                <div class="store__menu__description">
+                                    <p class="store__menu__description--1">Mousse au chocolat </p>
+                                    <p class="store__menu__description--2">Au piment d'Espelette et à la truffe </p>
+                                </div>
+                                <div class="store__menu__price__icon">
+                                    <p class="store__menu__price">23€</p>
+                                    <span class="store__menu__icon">
+                                        <i class="fas fa-check-circle"></i> 
+                                    </span>
+                                </div>
+                            </label>
+                        </div>
+                    </form>
+
+                    <!-- BOUTON COMMANDER -->
+                    <div class="menu__button__container">
+                        <button type="submit" type="submit" class="menu__button">Commander</button>
+                    </div>
+
+                </div>
+
+            </div> <!-- close store__cards -->
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer__content">
+                <div>
+                    <img  class="footer__logo" src="public/images/logo/ohmyfood@2x-white.svg" alt="Logo du site">
+                </div>
+                <div class="footer__items">
+                    <a href="#" class="footer__item">
+                        <i class="fas fa-utensils"></i>
+                        Proposer un restaurant
+                    </a>
+                    <a href="#" class="footer__item">
+                        <i class="fas fa-hands-helping"></i>
+                        Devenir partenaire
+                    </a>
+                    <a href="#" class="footer__item">Mentions légales</a>
+                    <a href="mailto:contact@ohmyfood.fr" class="footer__item">Contact</a>
+                </div>
+            </div>
+        </footer>
+
+    </div> <!-- close body__container -->
+
+</body>
+</html>

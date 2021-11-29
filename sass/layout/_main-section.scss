@@ -155,13 +155,14 @@
 
 //INFO - NOUVEAU
 #main__card1::before,
-#main__card2::before{
+#main__card2::before,
+#main__card1--en::before,
+#main__card2--en::before{
     @include flex-center;
     position: absolute;
     top: 10px;
     right: 10px;
     z-index: 1;
-    content: 'Nouveau';
     padding: 5px 10px;
     font-size: 1rem;
     font-weight: 500;
@@ -171,6 +172,18 @@
     background-color: $clr-tertiary;
 }
 
+#main__card1::before,
+#main__card2::before{
+    content: 'Nouveau';
+}
+
+#main__card1--en::before,
+#main__card2--en::before{
+    content: 'New';
+}
 
 
-
+// PAGE RESTAURANT
+.main__cards__img--2{
+    border-radius: unset;
+}

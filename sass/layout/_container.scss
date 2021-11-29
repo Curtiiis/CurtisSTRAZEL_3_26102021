@@ -9,3 +9,10 @@
     }
 }
 
+
+.content__container{
+    @include flex-center;
+    justify-content: space-evenly;
+    position: relative;
+}
+

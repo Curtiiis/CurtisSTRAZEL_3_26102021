@@ -14,8 +14,15 @@ button {
 
 
 .section__title, h1{
+    font-family: 'Shrikhand', sans-serif;
     font-size: 2rem;
     font-weight: 700;
+}
+
+.store__name{
+    font-size: 2.2rem;
+    font-weight: 400;
+
 }
 
 h2{
@@ -26,6 +33,9 @@ h2{
 
 // HEADER
 .header{
+    &__others{
+        font-size: 1.4rem;
+    }
     &__address{
         color: $clr-grey-dark;
         font-weight: 600;
@@ -93,3 +103,26 @@ h2{
     }
 }
 
+
+// RESTAURANT PAGE
+.store__menu{
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: .01rem;
+    color: $clr-black-font;
+    &__title{
+        font-size: 1.4rem;
+    }
+    &__description{
+        &--1{
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        &--2{
+            font-size: 1.3rem;
+        }
+    }
+    &__price{
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+}

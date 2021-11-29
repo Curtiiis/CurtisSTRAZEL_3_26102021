@@ -12,6 +12,16 @@
     }
 }
 
+.fa-arrow-left{
+    @include size-100;
+    display: flex;
+    &::before{
+        @include flex-center;
+        font-size: 20px;
+        width: 100%;
+    }
+}
+
 // MAIN
 .main__info{
     &__item::before{

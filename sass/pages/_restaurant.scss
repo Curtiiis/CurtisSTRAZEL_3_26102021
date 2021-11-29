@@ -1,14 +1,17 @@
 
 
 .store__cards{
-    position: relative;
+    // position: relative;
     width: 100%;
+    max-width: 400px;
 }
 
 .store__menu{
     // position: absolute;
     // top: -60px;
+    position: relative;
     width: 100%;
+    max-width: 400px;
     padding: 0 15px;
     background-color: $clr-background;
     &::before{
@@ -48,6 +51,8 @@
         border-radius: 15px;
         background-color: $clr-white;
         box-shadow: $box-shadow-cards;
+        transform: translateY(20px);
+        opacity: 0;
         &:hover{
             box-shadow: $box-shadow-cards-hover;
         }
@@ -61,6 +66,9 @@
         cursor: pointer;
     }
     &__description{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         padding: 10px 0 10px 10px;
         width: 85%;
         transition: width .4s ease-out;
@@ -81,7 +89,7 @@
         margin-right: 20px;
         &__icon{
             display: flex;
-            width: 14%;
+            width: 11%;
             transition: width .4s ease-out;
         }
     }
@@ -92,7 +100,6 @@
         height: 100%;
         border-radius: 0 15px 15px 0;
         background-color: $clr-tertiary;
-        transform: translateX(80px); //80px
         transition: transform .4s ease-out;
         }
 }
@@ -118,7 +125,7 @@
     // animation: item-check .5s ease-out forwards;
 }
 .store__menu__check:hover ~ .store__menu__price__icon{
-    width: 34%;
+    width: 110px;
 }
 
 // @keyframes item-check {
@@ -149,9 +156,29 @@
 
 
 
+// ANIMATION ITEM SLIDE-UP
+$slideUp-delay: .2s;
 
+.store__menu__item{
+    animation: item-slideUp 1s ease-out forwards;
+}
 
-
+@for $i from 1 to 9 {
+    #menu__item#{$i}{
+        animation-delay: calc($slideUp-delay * $i);
+    }
+} 
+    
+@keyframes item-slideUp {
+    0%{
+        transform: translateY(20px);
+        opacity: 0;
+    };
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    };
+}
 
 
 

@@ -800,12 +800,14 @@ h2 {
 }
 
 .store__cards {
-  position: relative;
   width: 100%;
+  max-width: 400px;
 }
 
 .store__menu {
+  position: relative;
   width: 100%;
+  max-width: 400px;
   padding: 0 15px;
   background-color: #f6f6f6;
 }
@@ -847,6 +849,8 @@ h2 {
   border-radius: 15px;
   background-color: #ffffff;
   box-shadow: 0 0 10px #0003;
+  transform: translateY(20px);
+  opacity: 0;
 }
 .store__menu__item:hover {
   box-shadow: 0 0 10px #0007;
@@ -859,6 +863,9 @@ h2 {
   cursor: pointer;
 }
 .store__menu__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 10px 0 10px 10px;
   width: 85%;
   transition: width 0.4s ease-out;
@@ -880,7 +887,7 @@ h2 {
 }
 .store__menu__price__icon {
   display: flex;
-  width: 14%;
+  width: 11%;
   transition: width 0.4s ease-out;
 }
 .store__menu__icon {
@@ -892,7 +899,6 @@ h2 {
   height: 100%;
   border-radius: 0 15px 15px 0;
   background-color: #99E2D0;
-  transform: translateX(80px);
   transition: transform 0.4s ease-out;
 }
 
@@ -915,7 +921,7 @@ h2 {
 }
 
 .store__menu__check:hover ~ .store__menu__price__icon {
-  width: 34%;
+  width: 110px;
 }
 
 .store__menu__header {
@@ -928,6 +934,53 @@ h2 {
 .store__name {
   max-width: 100%;
   margin-bottom: 0;
+}
+
+.store__menu__item {
+  animation: item-slideUp 1s ease-out forwards;
+}
+
+#menu__item1 {
+  animation-delay: 0.2s;
+}
+
+#menu__item2 {
+  animation-delay: 0.4s;
+}
+
+#menu__item3 {
+  animation-delay: 0.6s;
+}
+
+#menu__item4 {
+  animation-delay: 0.8s;
+}
+
+#menu__item5 {
+  animation-delay: 1s;
+}
+
+#menu__item6 {
+  animation-delay: 1.2s;
+}
+
+#menu__item7 {
+  animation-delay: 1.4s;
+}
+
+#menu__item8 {
+  animation-delay: 1.6s;
+}
+
+@keyframes item-slideUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

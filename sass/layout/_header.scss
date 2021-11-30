@@ -1,6 +1,9 @@
 // SECTION HEADER
 
 .header{
+    &__content{
+        animation: body-fadeIn $body-duration forwards;
+    }
     &__nav{
         @include flex-center-wrap;
         @include mq-tablet{

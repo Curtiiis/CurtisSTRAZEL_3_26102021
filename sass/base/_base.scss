@@ -44,3 +44,44 @@ h2{
         text-align: left;
     }
 }
+
+// LOADER PAGE
+.loader__container{
+    @include flex-center;
+    position: fixed;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fffa;
+    z-index: 30;
+    opacity: 0;
+}
+
+//SWITCH LANGUAGE
+#lang-check,
+.en-text{
+    display: none;
+}
+.fr-flag{
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+#lang-check:checked ~ .explore [class*="fr-text"],
+#lang-check:checked ~ .main [class*="fr-text"],
+#lang-check:checked ~ .footer span[class*="fr-text"]{
+    display: none !important; 
+}
+
+#lang-check:checked ~ .explore [class*="en-text"],
+#lang-check:checked ~ .main [class*="en-text"],
+#lang-check:checked ~ .footer span[class*="en-text"]{
+    display: unset !important; 
+}
+
+#lang-check:checked ~ header img[class*="fr-flag"]{
+    opacity: 1 !important;
+}
+
+
+

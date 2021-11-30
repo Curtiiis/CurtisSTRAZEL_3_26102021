@@ -1,4 +1,6 @@
 .explore{
+    opacity: 0;
+    animation: body-fadeIn $body-duration forwards;
     @include flex-column;
     padding: 30px 20px;
     background-color: $clr-background;

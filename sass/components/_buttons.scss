@@ -12,8 +12,9 @@
         transition: transform .1s;
         & img{
             display: block;
-            width: 100%;
-            height: 100%;
+            position: absolute;
+            width: 32px;
+            height: 30px;
         }
         &:hover{
             transform: scale(1.05);
@@ -21,7 +22,7 @@
         }
 }
 
-// BOUTON
+// BOUTON 'Explorer' et 'Commander'
 .menu__button,
 .explore__button{
     padding: 12px 25px;
@@ -114,6 +115,7 @@
     -webkit-text-fill-color: transparent;
 }
 
+
 // HEART BIG RED
 .heart-big{
     @include flex-center;
@@ -162,11 +164,8 @@
     }
 }
 
-#heart__check1:checked ~ .heart-big::before,
-#heart__check2:checked ~ .heart-big::before,
-#heart__check3:checked ~ .heart-big::before,
-#heart__check4:checked ~ .heart-big::before,
-#heart__check__r1:checked ~ .heart-big-2::before{
+
+.heart__label ~ .heart-big::before{
     animation: heart-big .7s backwards;
 }
 

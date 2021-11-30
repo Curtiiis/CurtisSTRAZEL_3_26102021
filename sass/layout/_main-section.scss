@@ -1,5 +1,8 @@
 // SECTION MAIN //
-
+.main{
+    opacity: 0;
+    animation: body-fadeIn $body-duration forwards;
+}
 
 // MAIN INFO
 .main__info{
@@ -12,6 +15,7 @@
     &__items{
         @include flex-column;
         width: 100%;
+        max-width: 1200px;
         @include mq-desktop{
             flex-direction: row;
             justify-content: space-evenly;
@@ -21,22 +25,23 @@
         position: relative;
         width: 100%;
         min-width: 270px;
+        max-width: 500px;
         margin: 12px 10px;
         padding: 20px;
         border-radius: 20px;
         background-color: $clr-background;
         box-shadow: $box-shadow;
-        @include mq-tablet{
-            width: 50%;
-        }
         @include mq-desktop{
-            width: 285px;
-            padding-right: 25px;
+            min-width: 33%;
+            padding-left: 25px;
         }
     }
     &__item:hover{
         background-color: $clr-pink;
         cursor: default;
+    }
+    &__text{
+        white-space: nowrap;
     }
 }
 
@@ -136,6 +141,9 @@
         margin-top: 5px;
     }
     &__links{
+        &:hover{
+            opacity: .9;
+        }
         &:hover .main__cards__content .main__cards__title span{
             text-decoration: underline;
         }

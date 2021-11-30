@@ -1,6 +1,7 @@
 // FOOTER
 
 .footer{
+    animation: body-fadeIn $body-duration forwards;
     padding: 20px 0 20px 30px;
     background-color: $clr-grey-dark;
     width: 100%;

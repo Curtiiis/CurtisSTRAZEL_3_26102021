@@ -24,6 +24,23 @@
     <!-- BODY CONTAINER -->
     <div class="body__container">
 
+        
+        <!-- LOADER PAGE -->
+        <div class="loader__container">
+            <span class="loader__box" id="loader__box--1">O</span>
+            <span class="loader__box" id="loader__box--2">h</span>
+            <span class="loader__box" id="loader__box--3">m</span>
+            <span class="loader__box" id="loader__box--4">y</span>
+            <span class="loader__box" id="loader__box--5">f</span>
+            <span class="loader__box" id="loader__box--6">o</span>
+            <span class="loader__box" id="loader__box--7">o</span>
+            <span class="loader__box" id="loader__box--8">d</span>
+            <span class="loader__box" id="loader__box--9">.</span>
+            <span class="loader__box" id="loader__box--10">.</span>
+            <span class="loader__box" id="loader__box--11">.</span>
+        </div>
+
+        <input type="checkbox" id="lang-check">
         <!-- HEADER -->
         <header>
             <div class="header__content">
@@ -40,31 +57,52 @@
                                 <input type="text" placeholder="Paris, Belleville" class="header__address">
                             </form>
                         </div>
-                        <a href="index-en.html" class="header__languages">
-                            <img src="public/images/logo/en-flag.png" alt="">
-                        </a>
+                        
+                        <label for="lang-check" class="header__languages lang-label">
+                            <img class="en-flag" src="public/images/logo/en-flag.png" alt="">
+                            <img class="fr-flag" src="public/images/logo/fr-flag.png" alt="">
+                        </label>
+
                     </div>
                 </nav>
             </div>
         </header>
 
+                
         <!-- EXPLORE -->
         <section class="explore">
-            <h1>Réservez le menu qui vous convient</h1>
-            <h2>Découvrez des restaurants d’exception, sélectionnés par nos soins.</h2>
-            <a href="#" class="explore__button">Explorer nos restaurants</a>
+            <h1 class="fr-text">Réservez le menu qui vous convient</h1>
+            <h1 class="en-text">Book the menu that suits you</h1>
+
+            <h2 class="fr-text">Découvrez des restaurants d’exception, sélectionnés par nos soins.</h2>
+            <h2 class="en-text">Discover exceptional restaurants, selected by us.</h2>
+
+            <a href="#" class="explore__button fr-text">Explorer nos restaurants</a>
+            <a href="#" class="explore__button en-text">Explore our restaurants</a>
         </section>
             
         <!-- MAIN -->
         <main class="main">
             <div class="main__info">
-                <p class="section__title">
-                    Fonctionnement
-                </p>
+                <p class="section__title fr-text">Fonctionnement</p>
+                <p class="section__title en-text">Flow</p>
+
                 <div class="main__info__items">
-                    <p class="main__info__item" id="info__item1">Choisissez un restaurant</p>
-                    <p class="main__info__item" id="info__item2">Composez votre menu</p>
-                    <p class="main__info__item" id="info__item3">Dégustez au restaurant</p>
+                    <p class="main__info__item" id="info__item1">
+                        <i class="fas fa-mobile-alt main__info__icons"></i>
+                        <span class="main__info__text fr-text">Choisissez un restaurant</span>
+                        <span class="main__info__text en-text">Select a restaurant</span>
+                    </p>
+                    <p class="main__info__item" id="info__item2">
+                        <i class="fas fa-list-ul main__info__icons"></i>
+                        <span class="main__info__text fr-text">Composez votre menu</span>         
+                        <span class="main__info__text en-text">Compose your lunch</span>         
+                    </p>
+                    <p class="main__info__item" id="info__item3">
+                        <i class="fas fa-store main__info__icons"></i> 
+                        <span class="main__info__text fr-text">Dégustez au restaurant</span>         
+                        <span class="main__info__text en-text">Enjoy at the restaurant</span>       
+                    </p>
                 </div>
             </div>
 
@@ -79,7 +117,8 @@
 
                         <!-- Réserver pour - Title -->
                         <p class="section__title" id="section_title__date">
-                            Réserver pour
+                            <span class="fr-text">Réserver pour</span>
+                            <span class="en-text">Book for</span>
                         </p>
 
                         <!-- Réserver pour - Items -->
@@ -87,18 +126,21 @@
                             <form action="post" class="main__aside__form">                       
                                 <label for="ceSoir" class="main__aside__item">
                                     <input type="radio" name="date" value="ceSoir" id="ceSoir" class="main__aside__check">
-                                    Ce soir
+                                    <span class="fr-text">Ce soir</span>
+                                    <span class="en-text">Tonight</span>
                                 </label>
 
                                 
                                 <label for="demainMidi" class="main__aside__item">
                                     <input type="radio" name="date" value="demainMidi" id="demainMidi" class="main__aside__check">
-                                    Demain midi
+                                    <span class="fr-text">Demain midi</span>
+                                    <span class="en-text">Tomorrow noon</span>
                                 </label>
 
                                 <label for="demainSoir" class="main__aside__item">
                                     <input type="radio" name="date" value="demainSoir" id="demainSoir" class="main__aside__check">
-                                    Demain Soir
+                                    <span class="fr-text">Demain soir</span>
+                                    <span class="en-text">Tomorrow evening</span>
                                 </label>                                    
                             </form>
                         </div>
@@ -109,7 +151,8 @@
 
                         <!-- Filtres - Title -->
                         <p class="section__title" id="section_title__filters">
-                            Filtres
+                            <span class="fr-text">Filtres</span>
+                            <span class="en-text">Filters</span>
                         </p>
 
                         <!-- Filtres - Items -->
@@ -117,32 +160,38 @@
                             <form action="post">                       
                                 <label for="vegetarien" class="main__aside__item">
                                     <input type="checkbox" name="filters" value="vegetarien" id="vegetarien" class="main__aside__check">
-                                    Végétarien
+                                    <span class="fr-text">Végétarien</span>
+                                    <span class="en-text">Vegan</span>
                                 </label>
                                 
                                 <label for="poisson" class="main__aside__item">
                                     <input type="checkbox" name="filters" value="poisson" id="poisson" class="main__aside__check">
-                                    Poisson
+                                    <span class="fr-text">Poisson</span>
+                                    <span class="en-text">Fish</span>
                                 </label>
 
                                 <label for="boeuf" class="main__aside__item">
                                     <input type="checkbox" name="filters" value="boeuf" id="boeuf" class="main__aside__check">
-                                    Boeuf
+                                    <span class="fr-text">Boeuf</span>
+                                    <span class="en-text">Beef</span>
                                 </label>   
                                 
                                 <label for="veau" class="main__aside__item">
                                     <input type="checkbox" name="filters" value="veau" id="veau" class="main__aside__check">
-                                    Veau
+                                    <span class="fr-text">Veau</span>
+                                    <span class="en-text">Veal</span>
                                 </label> 
 
                                 <label for="agneau" class="main__aside__item">
                                     <input type="checkbox" name="filters" value="agneau" id="agneau" class="main__aside__check">
-                                    Agneau
+                                    <span class="fr-text">Agneau</span>
+                                    <span class="en-text">Lamb</span>
                                 </label> 
 
                                 <label for="fruitsDeMer" class="main__aside__item">
                                     <input type="checkbox" name="filters" value="fruitsDeMer" id="fruitsDeMer" class="main__aside__check">
-                                    Fruits de mer
+                                    <span class="fr-text">Fruits de mer</span>
+                                    <span class="en-text">Sea food</span>
                                 </label> 
                             </form>
                         </div>
@@ -304,13 +353,18 @@
                 <div class="footer__items">
                     <a href="#" class="footer__item">
                         <i class="fas fa-utensils"></i>
-                        Proposer un restaurant
+                        <span class="fr-text">Proposer un restaurant</span>
+                        <span class="en-text">Propose a restaurant</span>
                     </a>
                     <a href="#" class="footer__item">
                         <i class="fas fa-hands-helping"></i>
-                        Devenir partenaire
+                        <span class="fr-text">Devenir partenaire</span>
+                        <span class="en-text">Become a partner</span>
                     </a>
-                    <a href="#" class="footer__item">Mentions légales</a>
+                    <a href="#" class="footer__item">
+                        <span class="fr-text">Mentions légales</span>
+                        <span class="en-text">Legal notice</span>
+                    </a>
                     <a href="mailto:contact@ohmyfood.fr" class="footer__item">Contact</a>
                 </div>
             </div>

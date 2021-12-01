@@ -58,7 +58,8 @@ h2{
 
 //SWITCH LANGUAGE
 #lang-check,
-.en-text{
+.en-text,
+.new-banner.en-text{
     display: none;
 }
 .fr-flag{
@@ -69,12 +70,14 @@ h2{
 
 #lang-check:checked ~ .explore [class*="fr-text"],
 #lang-check:checked ~ .main [class*="fr-text"],
+#lang-check:checked ~ .main__restaurants span[class*="fr-text"],
 #lang-check:checked ~ .footer span[class*="fr-text"]{
     display: none !important; 
 }
 
 #lang-check:checked ~ .explore [class*="en-text"],
 #lang-check:checked ~ .main [class*="en-text"],
+#lang-check:checked ~ .main__restaurants span[class*="en-text"],
 #lang-check:checked ~ .footer span[class*="en-text"]{
     display: unset !important; 
 }

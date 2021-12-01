@@ -172,7 +172,8 @@ h2 {
 }
 
 #lang-check,
-.en-text {
+.en-text,
+.new-banner.en-text {
   display: none;
 }
 
@@ -183,12 +184,14 @@ h2 {
 
 #lang-check:checked ~ .explore [class*=fr-text],
 #lang-check:checked ~ .main [class*=fr-text],
+#lang-check:checked ~ .main__restaurants span[class*=fr-text],
 #lang-check:checked ~ .footer span[class*=fr-text] {
   display: none !important;
 }
 
 #lang-check:checked ~ .explore [class*=en-text],
 #lang-check:checked ~ .main [class*=en-text],
+#lang-check:checked ~ .main__restaurants span[class*=en-text],
 #lang-check:checked ~ .footer span[class*=en-text] {
   display: unset !important;
 }
@@ -892,10 +895,7 @@ h2 {
   transform: scale(1.01);
 }
 
-#main__card1::before,
-#main__card2::before,
-#main__card1--en::before,
-#main__card2--en::before {
+.new-banner {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -912,13 +912,11 @@ h2 {
   background-color: #99E2D0;
 }
 
-#main__card1::before,
-#main__card2::before {
+.new-banner.fr-text {
   content: "Nouveau";
 }
 
-#main__card1--en::before,
-#main__card2--en::before {
+.new-banner.en-text {
   content: "New";
 }
 

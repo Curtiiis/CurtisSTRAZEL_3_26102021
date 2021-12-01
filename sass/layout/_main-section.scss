@@ -160,12 +160,8 @@
     }
 }
 
-
-//INFO - NOUVEAU
-#main__card1::before,
-#main__card2::before,
-#main__card1--en::before,
-#main__card2--en::before{
+//Bannière 'Nouveau'
+.new-banner{
     @include flex-center;
     position: absolute;
     top: 10px;
@@ -179,14 +175,10 @@
     color: $clr-green;
     background-color: $clr-tertiary;
 }
-
-#main__card1::before,
-#main__card2::before{
+.new-banner.fr-text{
     content: 'Nouveau';
 }
-
-#main__card1--en::before,
-#main__card2--en::before{
+.new-banner.en-text{
     content: 'New';
 }
 

@@ -2,7 +2,7 @@
 $loader-delay: .2s;
 $loader-duration: 3s;
 $loader-iteration: 1;
-$body-duration: 6s;
+$body-duration: 3s;
 
 // LOADER BODY
 @keyframes body-fadeIn {
@@ -22,12 +22,15 @@ $body-duration: 6s;
 }
 
 @keyframes loader-container {
-    0%{opacity: 1;
+    0%{
+        opacity: 1;
     };
-    70%{opacity: 1;
+    70%{
+        opacity: 1;
         min-height: 100vh;
     };
-    100%{opacity: 0;
+    100%{
+        opacity: 0;
         min-height: 0;
         height: 0;
         display: none;

@@ -40,7 +40,12 @@
             <span class="loader__box" id="loader__box--11">.</span>
         </div>
 
-        <input type="checkbox" id="lang-check">
+        <!-- <input type="checkbox" id="lang-check"> -->
+        <input type="radio" name="lang" value="english" id="english" class="switch__lang__check">
+        <input type="radio" name="lang" value="french" id="french" class="switch__lang__check" checked>
+        <input type="radio" name="lang" value="spanish" id="spanish" class="switch__lang__check">
+
+
         <!-- HEADER -->
         <header>
             <div class="header__content">
@@ -58,10 +63,21 @@
                             </form>
                         </div>
                         
-                        <label for="lang-check" class="header__languages lang-label">
-                            <img class="en-flag" src="public/images/logo/en-flag.png" alt="">
-                            <img class="fr-flag" src="public/images/logo/fr-flag.png" alt="">
-                        </label>
+                        <!-- Switch Language -->
+                        <form action="post" class="switch__lang__form">   
+                            <!-- FRENCH -->                    
+                            <label for="french" class="switch__lang__item">
+                                <img src="public/images/logo/fr-flag.png" id="lang__item--fr"  alt="">
+                            </label>
+                            <!-- ENGLISH -->                    
+                            <label for="english" class="switch__lang__item">
+                                <img src="public/images/logo/en-flag.png"  id="lang__item--en" alt="">
+                            </label>                            
+                            <!-- SPANISH -->                    
+                            <label for="spanish" class="switch__lang__item">
+                                <img src="public/images/logo/sp-flag.png"  id="lang__item--sp" alt="">
+                            </label>                                    
+                        </form>
 
                     </div>
                 </nav>
@@ -71,14 +87,19 @@
                 
         <!-- EXPLORE -->
         <section class="explore">
-            <h1 class="fr-text">Réservez le menu qui vous convient</h1>
-            <h1 class="en-text">Book the menu that suits you</h1>
-
-            <h2 class="fr-text">Découvrez des restaurants d’exception, sélectionnés par nos soins.</h2>
-            <h2 class="en-text">Discover exceptional restaurants, selected by us.</h2>
-
-            <a href="#" class="explore__button fr-text">Explorer nos restaurants</a>
-            <a href="#" class="explore__button en-text">Explore our restaurants</a>
+            <div class="explore__content">
+                <h1 class="fr-text">Réservez le menu qui vous convient</h1>
+                <h1 class="en-text">Book the menu that suits you</h1>
+                <h1 class="sp-text">Reserva el menú que más te convenga</h1>
+    
+                <h2 class="fr-text">Découvrez des restaurants d’exception, sélectionnés par nos soins.</h2>
+                <h2 class="en-text">Discover exceptional restaurants, selected by us.</h2>
+                <h2 class="sp-text">Descubra restaurantes excepcionales, seleccionados por nosotros.</h2>
+    
+                <a href="#" class="explore__button fr-text">Explorer nos restaurants</a>
+                <a href="#" class="explore__button en-text">Explore our restaurants</a>
+                <a href="#" class="explore__button sp-text">Explore nuestros restaurantes</a>
+            </div>
         </section>
             
         <!-- MAIN -->
@@ -86,22 +107,26 @@
             <div class="main__info">
                 <p class="section__title fr-text">Fonctionnement</p>
                 <p class="section__title en-text">Flow</p>
+                <p class="section__title sp-text">Marcha</p>
 
                 <div class="main__info__items">
                     <p class="main__info__item" id="info__item1">
                         <i class="fas fa-mobile-alt main__info__icons"></i>
                         <span class="main__info__text fr-text">Choisissez un restaurant</span>
                         <span class="main__info__text en-text">Select a restaurant</span>
+                        <span class="main__info__text sp-text">Elige un restaurante</span>
                     </p>
                     <p class="main__info__item" id="info__item2">
                         <i class="fas fa-list-ul main__info__icons"></i>
                         <span class="main__info__text fr-text">Composez votre menu</span>         
-                        <span class="main__info__text en-text">Compose your lunch</span>         
+                        <span class="main__info__text en-text">Compose your lunch</span>     
+                        <span class="main__info__text sp-text">Redacta tu menú</span>     
                     </p>
                     <p class="main__info__item" id="info__item3">
                         <i class="fas fa-store main__info__icons"></i> 
                         <span class="main__info__text fr-text">Dégustez au restaurant</span>         
                         <span class="main__info__text en-text">Enjoy at the restaurant</span>       
+                        <span class="main__info__text sp-text">Disfruta en el restaurante </span>       
                     </p>
                 </div>
             </div>
@@ -119,15 +144,17 @@
                         <p class="section__title" id="section_title__date">
                             <span class="fr-text">Réserver pour</span>
                             <span class="en-text">Book for</span>
+                            <span class="sp-text">Reserva para</span>
                         </p>
 
                         <!-- Réserver pour - Items -->
                         <div class="main__aside__items">
                             <form action="post" class="main__aside__form">                       
                                 <label for="ceSoir" class="main__aside__item">
-                                    <input type="radio" name="date" value="ceSoir" id="ceSoir" class="main__aside__check">
+                                    <input type="radio" name="date" value="ceSoir" id="ceSoir" class="main__aside__check" checked>
                                     <span class="fr-text">Ce soir</span>
                                     <span class="en-text">Tonight</span>
+                                    <span class="sp-text">Esta noche</span>
                                 </label>
 
                                 
@@ -135,12 +162,14 @@
                                     <input type="radio" name="date" value="demainMidi" id="demainMidi" class="main__aside__check">
                                     <span class="fr-text">Demain midi</span>
                                     <span class="en-text">Tomorrow noon</span>
+                                    <span class="sp-text">Mañana al mediodía</span>
                                 </label>
 
                                 <label for="demainSoir" class="main__aside__item">
                                     <input type="radio" name="date" value="demainSoir" id="demainSoir" class="main__aside__check">
                                     <span class="fr-text">Demain soir</span>
                                     <span class="en-text">Tomorrow evening</span>
+                                    <span class="sp-text">Mañana por la tarde</span>
                                 </label>                                    
                             </form>
                         </div>
@@ -153,6 +182,7 @@
                         <p class="section__title" id="section_title__filters">
                             <span class="fr-text">Filtres</span>
                             <span class="en-text">Filters</span>
+                            <span class="sp-text">Filtros</span>
                         </p>
 
                         <!-- Filtres - Items -->
@@ -162,36 +192,42 @@
                                     <input type="checkbox" name="filters" value="vegetarien" id="vegetarien" class="main__aside__check">
                                     <span class="fr-text">Végétarien</span>
                                     <span class="en-text">Vegan</span>
+                                    <span class="sp-text">Vegetariano</span>
                                 </label>
                                 
                                 <label for="poisson" class="main__aside__item">
                                     <input type="checkbox" name="filters" value="poisson" id="poisson" class="main__aside__check">
                                     <span class="fr-text">Poisson</span>
                                     <span class="en-text">Fish</span>
+                                    <span class="sp-text">Pescado</span>
                                 </label>
 
                                 <label for="boeuf" class="main__aside__item">
                                     <input type="checkbox" name="filters" value="boeuf" id="boeuf" class="main__aside__check">
                                     <span class="fr-text">Boeuf</span>
                                     <span class="en-text">Beef</span>
+                                    <span class="sp-text">Carne de res</span>
                                 </label>   
                                 
                                 <label for="veau" class="main__aside__item">
                                     <input type="checkbox" name="filters" value="veau" id="veau" class="main__aside__check">
                                     <span class="fr-text">Veau</span>
                                     <span class="en-text">Veal</span>
+                                    <span class="sp-text">Ternero</span>
                                 </label> 
 
                                 <label for="agneau" class="main__aside__item">
                                     <input type="checkbox" name="filters" value="agneau" id="agneau" class="main__aside__check">
                                     <span class="fr-text">Agneau</span>
                                     <span class="en-text">Lamb</span>
+                                    <span class="sp-text">Cordero</span>
                                 </label> 
 
                                 <label for="fruitsDeMer" class="main__aside__item">
                                     <input type="checkbox" name="filters" value="fruitsDeMer" id="fruitsDeMer" class="main__aside__check">
                                     <span class="fr-text">Fruits de mer</span>
                                     <span class="en-text">Sea food</span>
+                                    <span class="sp-text">Marisco</span>
                                 </label> 
                             </form>
                         </div>
@@ -203,7 +239,9 @@
 
                     <!-- Restaurants - Title -->
                     <p class="section__title">
-                        Restaurants
+                        <span class="fr-text">Restaurants</span>
+                        <span class="en-text">Restaurants</span>
+                        <span class="sp-text">Restaurantes</span>
                     </p>
 
                     <!-- Restaurants - Items -->
@@ -219,6 +257,7 @@
                                     <img class="main__cards__img" src="public/images/restaurants/1/desktop.jpg"  alt="Image du restaurant La palette du goût">  
                                     <span class="new-banner fr-text">Nouveau</span>
                                     <span class="new-banner en-text">New</span>
+                                    <span class="new-banner sp-text">Nuevo</span>
                                 </picture> 
                                 
 
@@ -254,6 +293,7 @@
                                         alt="Image du restaurant La note enchantée">
                                     <span class="new-banner fr-text">Nouveau</span>
                                     <span class="new-banner en-text">New</span>
+                                    <span class="new-banner sp-text">Nuevo</span>
                                 </picture>
                         
                         
@@ -359,15 +399,18 @@
                         <i class="fas fa-utensils"></i>
                         <span class="fr-text">Proposer un restaurant</span>
                         <span class="en-text">Propose a restaurant</span>
+                        <span class="sp-text">Sugerir un restaurante</span>
                     </a>
                     <a href="#" class="footer__item">
                         <i class="fas fa-hands-helping"></i>
                         <span class="fr-text">Devenir partenaire</span>
                         <span class="en-text">Become a partner</span>
+                        <span class="sp-text">Convertirse en socio</span>
                     </a>
                     <a href="#" class="footer__item">
                         <span class="fr-text">Mentions légales</span>
                         <span class="en-text">Legal notice</span>
+                        <span class="sp-text">Notas legales </span>
                     </a>
                     <a href="mailto:contact@ohmyfood.fr" class="footer__item">Contact</a>
                 </div>

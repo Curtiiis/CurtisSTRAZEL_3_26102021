@@ -1,13 +1,25 @@
 .explore{
     opacity: 0;
     animation: body-fadeIn $body-duration forwards;
+    height: 210px;
+    &__content{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        @include mq-tablet{
+            padding-left: 40px;
+            align-items: start;
+        }
+    }
     @include flex-column;
-    padding: 30px 20px;
+    // padding: 30px 20px;
     background-color: $clr-background;
     @include mq-tablet{
         align-items: start;
     }
-    @include mq-desktop{
-        padding: 30px 60px;
-    }
+    // @include mq-desktop{
+    //     padding: 30px 60px;
+    // }
 }

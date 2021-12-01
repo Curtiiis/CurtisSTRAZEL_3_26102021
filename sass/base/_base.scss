@@ -7,8 +7,8 @@
 }
 
 html {
-    // 10px div by def of 16px
-    font-size: 62.5%;
+    // font-size: 62.5%;
+    font-size: 10px;
 }
 
 a{
@@ -22,12 +22,8 @@ h1{
     @include mq-tablet{
         max-width: 100%;
     }
-    margin-bottom: 10px;
 }
 
-h2{
-    margin-bottom: 20px;
-}
 
 .section__title{
         align-self: start;
@@ -57,34 +53,57 @@ h2{
 }
 
 //SWITCH LANGUAGE
-#lang-check,
-.en-text,
-.new-banner.en-text{
-    display: none;
+.switch__lang{
+    &__form{
+        display: none;
+        @include mq-tablet{
+            display: flex;
+        }
+    }
+    &__item{
+        margin: 0 10px;
+        & img{
+            opacity: .3;    
+            transition: opacity .3s ease-out;   
+        }
+        &:hover{
+            opacity: .85;
+            cursor: pointer;
+        }
+
+    }
 }
-.fr-flag{
-    opacity: 0;
-    cursor: pointer;
+#english:checked ~ header img[id*="--en"],
+#french:checked ~ header img[id*="--fr"],
+#spanish:checked ~ header img[id*="--sp"]{
+    opacity: 1;
 }
 
-
-#lang-check:checked ~ .explore [class*="fr-text"],
-#lang-check:checked ~ .main [class*="fr-text"],
-#lang-check:checked ~ .main__restaurants span[class*="fr-text"],
-#lang-check:checked ~ .footer span[class*="fr-text"]{
+.switch__lang__check,
+h1[class*="fr-text"],h2[class*="fr-text"],a[class*="fr-text"],span[class*="fr-text"],p[class*="fr-text"],
+h1[class*="en-text"],h2[class*="en-text"],a[class*="en-text"],span[class*="en-text"],p[class*="en-text"],
+h1[class*="sp-text"],h2[class*="sp-text"],a[class*="sp-text"],span[class*="sp-text"],p[class*="sp-text"]{
     display: none !important; 
 }
 
-#lang-check:checked ~ .explore [class*="en-text"],
-#lang-check:checked ~ .main [class*="en-text"],
-#lang-check:checked ~ .main__restaurants span[class*="en-text"],
-#lang-check:checked ~ .footer span[class*="en-text"]{
+#english:checked ~ .explore [class*="en-text"],
+#english:checked ~ .main [class*="en-text"],
+#english:checked ~ .main__restaurants span[class*="en-text"],
+#english:checked ~ .footer span[class*="en-text"]{
     display: unset !important; 
 }
 
-#lang-check:checked ~ header img[class*="fr-flag"]{
-    opacity: 1 !important;
+#french:checked ~ .explore [class*="fr-text"],
+#french:checked ~ .main [class*="fr-text"],
+#french:checked ~ .main__restaurants span[class*="fr-text"],
+#french:checked ~ .footer span[class*="fr-text"]{
+    display: unset !important; 
 }
 
-
+#spanish:checked ~ .explore [class*="sp-text"],
+#spanish:checked ~ .main [class*="sp-text"],
+#spanish:checked ~ .main__restaurants span[class*="sp-text"],
+#spanish:checked ~ .footer span[class*="sp-text"]{
+    display: unset !important; 
+}
 

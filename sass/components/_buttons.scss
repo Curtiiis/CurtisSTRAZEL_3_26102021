@@ -8,11 +8,11 @@
         display: block;
         width: 35px;
         height: 30px;
-        margin-left: 10px;
+        margin-left: 70px;
         transition: transform .1s;
         & img{
             display: block;
-            position: absolute;
+            position: relative;
             width: 32px;
             height: 30px;
         }
@@ -22,22 +22,25 @@
         }
 }
 
+
 // BOUTON 'Explorer' et 'Commander'
 .menu__button,
 .explore__button{
+    width: 300px;
+    height: 50px;
     padding: 12px 25px;
     border-radius: 30px;
     border: none;
     box-shadow: $box-shadow;
     color: $clr-white;
     font-weight: 500;
-    font-size: 1.3rem;
+    font-size: 1.625rem;
     text-align: center;
     cursor: pointer;
     background: linear-gradient(to top, $clr-primary, $clr-secondary);
     transition: all .2s ease-in-out;
     &:hover{
-        filter: brightness(1.2) contrast(.85);
+        opacity: .85;
         transform: scale(1.01);
         box-shadow: 0px 5px 10px #0007;
     }
@@ -61,113 +64,85 @@
     border-radius: 20px;
     height: 60px;
     width: 80%;
-    font-size: 1.5rem;
+    font-size: 1.875rem;
 }
 
 
 //HEART BUTTON
+.heart{
+    &__form--2{
+        @include mq-desktop{
+        position: absolute;
+        right: 50px;
+        }
+    }
+    &__check{
+        display: none;
+        position: relative;
+        right: 70px;
+        transition: all .5s ease-in-out;
+    }
+    &-big,&-big-2{
+        @include flex-center;
+        display: none;
+        position: absolute;
+        top: -100%;
+        left: 50%;
+        &::before{
+            position: absolute;
+            content: "\f004";
+            font-family: "Font Awesome 5 Free";
+            font-size: 2rem;
+            font-weight: 900;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            color: $clr-red;  
+            opacity: 0;
+            transition: opacity .5s;
+            animation: heart-big .7s backwards;
+            }
+        }
+    &-big-2{
+        top: -150px;
+        transform: translate(-50%, -50%);
+    }
+    }
+
 .fa-heart{
     background-image: linear-gradient(to top, $clr-primary, $clr-secondary);
     background-size: cover;
     background-clip: text;
     -webkit-background-clip: text;
+    // -webkit-text-fill-color: #fcc;
     -webkit-text-fill-color: $clr-white;
     -webkit-text-stroke-width: .1rem;
     color: $clr-grey-dark;
     font-size: 25px;
-
     @include flex-center;
     width: 30px;
     height: 30px;
-
     cursor: pointer;
-
     transition: all .3s ease-in-out;
-}
-
-#fa-heart-r1{
-    -webkit-text-fill-color: $clr-background;
-}
-
-.heart__form--2{
-    @include mq-desktop{
-        position: absolute;
-        right: 50px;
+    &--2{
+        -webkit-text-fill-color: $clr-background;
     }
 }
 
-.heart__check{
-    display: none;
-    position: relative;
-    right: 70px;
-    transition: all .5s ease-in-out;
-    &:checked ~ .heart-big{
-        display: flex;
-    }
+//ANIMATION HEART & HEART-BIG
+.heart__check:checked ~ .heart-big,
+.heart__check:checked ~ .heart-big-2{
+    display: flex;
 }
 
-#heart__check1:checked ~ .heart__label  #fa-heart-1,
-#heart__check2:checked ~ .heart__label  #fa-heart-2,
-#heart__check3:checked ~ .heart__label  #fa-heart-3,
-#heart__check4:checked ~ .heart__label  #fa-heart-4,
-#heart__check__r1:checked ~ .heart__label  #fa-heart-r1{
+.heart__check:checked ~ .heart__label  .fa-heart{
     color: transparent;
     -webkit-text-fill-color: transparent;
 }
 
 
-// HEART BIG RED
-.heart-big{
-    @include flex-center;
-    display: none;
-    position: absolute;
-    top: -100%;
-    left: 50%;
-    &::before{
-        position: absolute;
-        content: "\f004";
-        font-family: "Font Awesome 5 Free";
-        font-size: 2rem;
-        font-weight: 900;
-        display: inline-block;
-        font-style: normal;
-        font-variant: normal;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        color: $clr-red;
-        
-        opacity: 0;
-        transition: opacity .5s;
-    }
-}
-
-.heart-big-2{
-    @include flex-center;
-    &::before{
-        position: absolute;
-        top: -150px;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        content: "\f004";
-        font-family: "Font Awesome 5 Free";
-        font-size: 2rem;
-        font-weight: 900;
-        display: inline-block;
-        font-style: normal;
-        font-variant: normal;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        color: $clr-red;
-        
-        opacity: 0;
-        transition: opacity .5s;
-    }
-}
-
-
-.heart__label ~ .heart-big::before{
-    animation: heart-big .7s backwards;
-}
 
 @keyframes heart-big {
     0%{

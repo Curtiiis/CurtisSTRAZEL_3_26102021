@@ -40,11 +40,8 @@
         @include flex-center;
         width: 100%;
         @include mq-tablet{
-            width: 355px;
+            width: 500px;
         }
-    }
-    &__languages{
-        @include flex-center;
     }
     &__localisation{
         @include flex-center;

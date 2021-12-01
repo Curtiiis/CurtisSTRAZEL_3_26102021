@@ -1,20 +1,13 @@
 // BASE
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 10px;
     font-weight: 400;
     line-height: 1.5;
     color: $clr-black-font;
 }
 
-button {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-}
-
-
 .section__title, h1{
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 400;
     font-weight: 700;
 }
@@ -22,7 +15,7 @@ button {
 .store{
     &__name{
         font-family: 'Shrikhand', sans-serif;
-        font-size: 2.2rem;
+        font-size: 2.75rem;
         font-weight: 400;
         letter-spacing: .15rem;
     }
@@ -35,7 +28,7 @@ button {
 }
 
 h2{
-    font-size: 1.4rem;
+    font-size: 1.75rem;
     font-weight: 300;
 }
 
@@ -49,13 +42,10 @@ h2{
 
 // HEADER
 .header{
-    &__others{
-        font-size: 1.4rem;
-    }
     &__address{
         color: $clr-grey-dark;
         font-weight: 600;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
     &__explore{
         text-align: center;
@@ -69,7 +59,7 @@ h2{
 // MAIN
 .main__info{
     &__item{
-        font-size: 1.4rem;
+        font-size: 1.75rem;
         font-weight: 500;
         text-align: center;
         letter-spacing: .03rem;
@@ -78,22 +68,22 @@ h2{
 
 .main__aside{
     &__item{
-        font-size: 1.4rem;
+        font-size: 1.75rem;
     }
 }
 
 .main__cards{
     &__title{
-        font-size: 1.6rem;
+        font-size: 2rem;
         font-weight: 600;
         letter-spacing: .01rem;
-        line-height: 1.5rem;
+        line-height: 2.15rem;
         &:hover span{
             text-decoration: underline;
         }
     }
     &__town{
-        font-size: 1.4rem;
+        font-size: 1.75rem;
         font-weight: 300;
     }
     &__links:hover ~ .main__cards__content .main__cards__title span{
@@ -106,7 +96,7 @@ h2{
 .footer{
     color: $clr-white;
     &__item{
-        font-size: 1.3rem;
+        font-size: 1.625rem;
         &:hover{
             text-shadow: $text-shadow-white;
         }
@@ -120,19 +110,19 @@ h2{
     letter-spacing: .01rem;
     color: $clr-black-font;
     &__title{
-        font-size: 1.4rem;
+        font-size: 1.75rem;
     }
     &__description{
         &--1{
-            font-size: 1.5rem;
+            font-size: 1.875rem;
             font-weight: 500;
         }
         &--2{
-            font-size: 1.3rem;
+            font-size: 1.625rem;
         }
     }
     &__price{
-        font-size: 1.3rem;
+        font-size: 1.625rem;
         font-weight: 600;
     }
 }

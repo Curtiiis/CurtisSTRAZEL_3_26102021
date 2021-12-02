@@ -59,12 +59,8 @@
     }
 }
 
-#menu__button--cmd{
+.menu__button--cmd{
     display: block;
-    border-radius: 20px;
-    height: 60px;
-    width: 80%;
-    font-size: 1.875rem;
 }
 
 
@@ -75,6 +71,12 @@
         position: absolute;
         right: 50px;
         }
+    }
+    &__label{
+        @include flex-center;
+        position: relative;
+        width: 30px;
+        height: 30px;
     }
     &__check{
         display: none;
@@ -88,8 +90,8 @@
         position: absolute;
         top: -100%;
         left: 50%;
+        transform: translate(-50%, -50%);
         &::before{
-            position: absolute;
             content: "\f004";
             font-family: "Font Awesome 5 Free";
             font-size: 2rem;
@@ -109,39 +111,43 @@
         top: -150px;
         transform: translate(-50%, -50%);
     }
-    }
-
+}
 .fa-heart{
-    background-image: linear-gradient(to top, $clr-primary, $clr-secondary);
+    position: absolute;
     background-size: cover;
     background-clip: text;
     -webkit-background-clip: text;
-    // -webkit-text-fill-color: #fcc;
-    -webkit-text-fill-color: $clr-white;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all .7s ease-out;
+}
+.fa-heart--grey{
+    -webkit-text-fill-color: $clr-background;
     -webkit-text-stroke-width: .1rem;
     color: $clr-grey-dark;
-    font-size: 25px;
-    @include flex-center;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    transition: all .3s ease-in-out;
-    &--2{
-        -webkit-text-fill-color: $clr-background;
-    }
+    opacity: 1;
+}
+.fa-heart--white{
+    -webkit-text-fill-color: $clr-white;
+}
+.fa-heart--pink{
+    background-image: linear-gradient(to top, $clr-primary, $clr-secondary);
+    -webkit-text-fill-color: transparent;
+    color: none;
+    opacity: 0;
 }
 
 //ANIMATION HEART & HEART-BIG
+.heart__check:checked ~ .heart__label  .fa-heart--grey{
+    opacity: 0;
+}
+.heart__check:checked ~ .heart__label  .fa-heart--pink{
+    opacity: 1;
+}
 .heart__check:checked ~ .heart-big,
 .heart__check:checked ~ .heart-big-2{
-    display: flex;
+    display: unset;
 }
-
-.heart__check:checked ~ .heart__label  .fa-heart{
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-}
-
 
 
 @keyframes heart-big {

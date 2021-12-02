@@ -76,9 +76,10 @@
                         <form action="post" class="heart__form heart__form--2">
                             <input type="checkbox" class="heart__check" id="heart__check__r1">
                             <label for="heart__check__r1" class="heart__label">
-                                <i class="fas fa-heart" id="fa-heart-r1"></i>
+                                <i class="fas fa-heart fa-heart--grey"></i>
+                                <i class="fas fa-heart fa-heart--pink"></i>
                             </label>
-                            <span class="heart-big-2"></span>
+                            <span class="heart-big heart-big-2"></span>
                         </form>
                     </div>
 
@@ -90,7 +91,7 @@
 
                         <form action="post">
                             <!-- CARD ITEM -->
-                            <label class="store__menu__item" id="menu__item1">
+                            <label class="store__menu__item" id="menu__item1" for="menu__check1">
                                 <input type="checkbox" class="store__menu__check" id="menu__check1">
                                 <div class="store__menu__description">
                                     <p class="store__menu__description--1">Tartare de poulpe acidulé</p>
@@ -105,8 +106,8 @@
                             </label>
 
                             <!-- CARD ITEM -->
-                            <label class="store__menu__item" id="menu__item2">
-                                <input type="checkbox" class="store__menu__check" id="menu__check1">
+                            <label class="store__menu__item" id="menu__item2" for="menu__check2">
+                                <input type="checkbox" class="store__menu__check" id="menu__check2">
                                 <div class="store__menu__description">
                                     <p class="store__menu__description--1">Velouté de légumes d'antan</p>
                                     <p class="store__menu__description--2">Carotte, panais, topinambour</p>
@@ -120,8 +121,8 @@
                             </label>
 
                             <!-- CARD ITEM -->
-                            <label class="store__menu__item" id="menu__item3">
-                                <input type="checkbox" class="store__menu__check" id="menu__check1">
+                            <label class="store__menu__item" id="menu__item3" for="menu__check3">
+                                <input type="checkbox" class="store__menu__check" id="menu__check3">
                                 <div class="store__menu__description">
                                     <p class="store__menu__description--1">Soupe à l'oignon</p>
                                     <p class="store__menu__description--2">Revisitée</p>
@@ -141,8 +142,8 @@
                             <p class="store__menu__title" id="menu__title--2">PLATS</p>
 
                             <!-- CARD ITEM -->
-                            <label class="store__menu__item" id="menu__item4">
-                                <input type="checkbox" class="store__menu__check" id="menu__check1">
+                            <label class="store__menu__item" id="menu__item4" for="menu__check4">
+                                <input type="checkbox" class="store__menu__check" id="menu__check4">
                                 <div class="store__menu__description">
                                     <p class="store__menu__description--1">Coquilles Saint-Jacques</p>
                                     <p class="store__menu__description--2">Accompagnées d'une purée de panais</p>
@@ -156,8 +157,8 @@
                             </label>
 
                             <!-- CARD ITEM -->
-                            <label class="store__menu__item" id="menu__item5">
-                                <input type="checkbox" class="store__menu__check" id="menu__check1">
+                            <label class="store__menu__item" id="menu__item5" for="menu__check5">
+                                <input type="checkbox" class="store__menu__check" id="menu__check5">
                                 <div class="store__menu__description">
                                     <p class="store__menu__description--1">Magret de canard</p>
                                     <p class="store__menu__description--2">Et parmentier de pommes de terre</p>
@@ -171,8 +172,8 @@
                             </label>
 
                             <!-- CARD ITEM -->
-                            <label class="store__menu__item" id="menu__item6">
-                                <input type="checkbox" class="store__menu__check" id="menu__check1">
+                            <label class="store__menu__item" id="menu__item6" for="menu__check6">
+                                <input type="checkbox" class="store__menu__check" id="menu__check6">
                                 <div class="store__menu__description">
                                     <p class="store__menu__description--1">Pigeonneau d’Ille-et-Vilaine</p>
                                     <p class="store__menu__description--2">Sur son lit de gnocchis aux légumes</p>
@@ -192,8 +193,8 @@
                             <p class="store__menu__title" id="menu__title--3">DESSERTS</p>
 
                             <!-- CARD ITEM -->
-                            <label class="store__menu__item" id="menu__item7">
-                                <input type="checkbox" class="store__menu__check" id="menu__check1">
+                            <label class="store__menu__item" id="menu__item7" for="menu__check7">
+                                <input type="checkbox" class="store__menu__check" id="menu__check7">
                                 <div class="store__menu__description">
                                     <p class="store__menu__description--1">Pétales de violettes glacés</p>
                                     <p class="store__menu__description--2">Et purée de noisettes</p>
@@ -207,8 +208,8 @@
                             </label>
 
                             <!-- CARD ITEM -->
-                            <label class="store__menu__item" id="menu__item8">
-                                <input type="checkbox" class="store__menu__check" id="menu__check1">
+                            <label class="store__menu__item" id="menu__item8" for="menu__check8">
+                                <input type="checkbox" class="store__menu__check" id="menu__check8">
                                 <div class="store__menu__description">
                                     <p class="store__menu__description--1">Fondant au chocolat</p>
                                     <p class="store__menu__description--2">Revisité</p>
@@ -222,8 +223,8 @@
                             </label>
 
                             <!-- CARD ITEM -->
-                            <label class="store__menu__item" id="menu__item9">
-                                <input type="checkbox" class="store__menu__check" id="menu__check1">
+                            <label class="store__menu__item" id="menu__item9" for="menu__check9">
+                                <input type="checkbox" class="store__menu__check" id="menu__check9">
                                 <div class="store__menu__description">
                                     <p class="store__menu__description--1">Millefeuille croustillant</p>
                                     <p class="store__menu__description--2">Myrtilles et pâte d’amande</p>
@@ -285,7 +286,7 @@
 
                     <!-- BOUTON COMMANDER -->
                     <div class="menu__button__container">
-                        <button type="submit" type="submit" class="menu__button" id="menu__button--cmd">Commander</button>
+                        <button type="submit" type="submit" class="menu__button menu__button--cmd">Commander</button>
                     </div>
 
                 </div> <!-- close store__menu -->

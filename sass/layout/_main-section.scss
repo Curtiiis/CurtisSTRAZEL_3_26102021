@@ -158,6 +158,10 @@
         height: 175px;  
         object-fit: cover;
         border-radius: 20px 20px 0 0;
+        &--2{
+            border-radius: unset;
+            height: 400px;
+        }
     }
     &:hover{
         box-shadow: $box-shadow-cards-hover;
@@ -187,11 +191,3 @@
     content: 'New';
 }
 
-
-// PAGE RESTAURANT
-.main__cards{
-    &__img--2{
-        border-radius: unset;
-        height: 300px;
-    }
-}

@@ -227,6 +227,10 @@ body {
   color: #040a0c;
 }
 
+::selection {
+  background: none;
+}
+
 .section__title, h1 {
   font-size: 2.5rem;
   font-weight: 400;
@@ -240,7 +244,6 @@ body {
   letter-spacing: 0.15rem;
 }
 .store__time {
-  color: #99E2D0;
   font-size: 2rem;
   font-weight: 500;
   color: #bdffee;
@@ -393,12 +396,8 @@ h2 {
   justify-content: center;
 }
 
-#menu__button--cmd {
+.menu__button--cmd {
   display: block;
-  border-radius: 20px;
-  height: 60px;
-  width: 80%;
-  font-size: 1.875rem;
 }
 
 @media screen and (min-width: 975px) {
@@ -406,6 +405,14 @@ h2 {
     position: absolute;
     right: 50px;
   }
+}
+.heart__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 30px;
+  height: 30px;
 }
 .heart__check {
   display: none;
@@ -421,9 +428,9 @@ h2 {
   position: absolute;
   top: -100%;
   left: 50%;
+  transform: translate(-50%, -50%);
 }
 .heart-big::before, .heart-big-2::before {
-  position: absolute;
   content: "\f004";
   font-family: "Font Awesome 5 Free";
   font-size: 2rem;
@@ -444,34 +451,44 @@ h2 {
 }
 
 .fa-heart {
-  background-image: linear-gradient(to top, #9356DC, #FF79DA);
+  position: absolute;
   background-size: cover;
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: #ffffff;
+  font-size: 25px;
+  cursor: pointer;
+  transition: all 0.7s ease-out;
+}
+
+.fa-heart--grey {
+  -webkit-text-fill-color: #f6f6f6;
   -webkit-text-stroke-width: 0.1rem;
   color: #353535;
-  font-size: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  opacity: 1;
 }
-.fa-heart--2 {
-  -webkit-text-fill-color: #f6f6f6;
+
+.fa-heart--white {
+  -webkit-text-fill-color: #ffffff;
+}
+
+.fa-heart--pink {
+  background-image: linear-gradient(to top, #9356DC, #FF79DA);
+  -webkit-text-fill-color: transparent;
+  color: none;
+  opacity: 0;
+}
+
+.heart__check:checked ~ .heart__label .fa-heart--grey {
+  opacity: 0;
+}
+
+.heart__check:checked ~ .heart__label .fa-heart--pink {
+  opacity: 1;
 }
 
 .heart__check:checked ~ .heart-big,
 .heart__check:checked ~ .heart-big-2 {
-  display: flex;
-}
-
-.heart__check:checked ~ .heart__label .fa-heart {
-  color: transparent;
-  -webkit-text-fill-color: transparent;
+  display: unset;
 }
 
 @keyframes heart-big {
@@ -883,6 +900,10 @@ h2 {
   object-fit: cover;
   border-radius: 20px 20px 0 0;
 }
+.main__cards__img--2 {
+  border-radius: unset;
+  height: 400px;
+}
 .main__cards:hover {
   box-shadow: 0 0 10px #0007;
   transform: scale(1.01);
@@ -911,11 +932,6 @@ h2 {
 
 .new-banner.en-text {
   content: "New";
-}
-
-.main__cards__img--2 {
-  border-radius: unset;
-  height: 300px;
 }
 
 .footer {
@@ -1062,12 +1078,7 @@ h2 {
   width: 80%;
   transition: width 0.4s ease-out;
 }
-.store__menu__description--1 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.store__menu__description--2 {
+.store__menu__description p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

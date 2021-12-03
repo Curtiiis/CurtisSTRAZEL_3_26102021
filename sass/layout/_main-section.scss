@@ -1,4 +1,5 @@
-// SECTION MAIN //
+/* SECTION MAIN */
+
 .main{
     opacity: 0;
     animation: body-fadeIn $body-duration forwards;
@@ -32,21 +33,17 @@
             min-width: 30%;
             padding-left: 25px;
         }
+        &:hover{
+            background-color: $clr-pink;
+            cursor: default;
+        }
+        &:hover i{
+            color: $clr-primary;
+        }
         & p{
             max-width: 250px;
             margin: 0 auto;
-            text-align: left;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
         }
-    }
-    &__item:hover{
-        background-color: $clr-pink;
-        cursor: default;
-    }
-    &__text{
-        white-space: nowrap;
     }
 }
 
@@ -111,11 +108,8 @@
 // MAIN CARDS
 .main__cards{
     position: relative;
-
     width: 100%;    
-    height: 250px;   
     margin-bottom: 25px;
-
     border-radius: 20px;
     box-shadow: $box-shadow-cards;
     background-color: $clr-white;
@@ -124,39 +118,20 @@
         width: calc(50% - 10px);
     }
     &__content{
+        position: relative;
         @include flex-center;
         justify-content: space-between;
-        position: relative;
         height: 80px;
         padding: 0 15px;
     }
-    &__description{
-        width: 90%;
-        height: 100%;
-    }
     &__title{
-        height: 100%;
-        display: flex;
-        flex-direction: column;
+        @include flex-column;
         justify-content: center;
         width: 90%;
-        & span, & p{
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
+        height: 100%;
     }
     &__town{
-        height: 35%;
         margin-top: 5px;
-    }
-    &__links{
-        &:hover{
-            opacity: .9;
-        }
-        &:hover .main__cards__content .main__cards__title span{
-            text-decoration: underline;
-        }
     }
     &__img{
         width: 100%;
@@ -169,8 +144,12 @@
         }
     }
     &:hover{
+        opacity: .9;
         box-shadow: $box-shadow-cards-hover;
         transform: scale(1.01);
+        & .main__cards__title span{
+            text-decoration: underline;
+        }
     }
 }
 

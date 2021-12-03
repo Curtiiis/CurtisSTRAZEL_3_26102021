@@ -1,16 +1,17 @@
 /* ICONS */
 
 // HEADER
-.header{
-    &__form::before{
+.fa-map-marker-alt{
     @include icon-pseudo-element;
+    position: relative;
     content: "\f3c5";
-    @include center-trans-y;
-    left: -30px;
-
+    top: 0;
+    left: 0;
+    transform: none;
     color: $clr-grey-dark;
     font-size: 1.75rem;
-    }
+    margin-right: 10px;
+
 }
 
 .fa-arrow-left{

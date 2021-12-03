@@ -1,10 +1,12 @@
-//PAGE RESTAURANT
+/* PAGE RESTAURANT */
+
 .store{
     &__name{
         max-width: 100%;
         margin-bottom: 0;
     }
     &__infos{
+        min-width: 000px;
         position: relative;
         @include mq-desktop{
             position: absolute;
@@ -13,31 +15,22 @@
             color: $clr-white;
             padding: 10px;
             left: 0;
-            background-color: #6669;
+            background-color: $clr-grey-tr;
             border-radius: 15px;
             backdrop-filter: blur(2px);
-        }
-    }
-    &__time{
-        display: none;
-        @include mq-desktop{
-            display: block;
         }
     }
     &__cards{
         display: flex;
         justify-content: space-evenly;
         width: 100%;
-        max-width: $width-store-ctnr;
         margin: 0 auto;
     }
 }
 
+.store__time,
 #store__name--2{
-    display: none;
-    @include mq-desktop{
-        display: block;
-    }
+    @include desktop-visible;
 }
 
 .store__menu{
@@ -63,10 +56,7 @@
         border-radius: 40px 40px 0 0;
     }
     &--2{
-        display: none;
-        @include mq-desktop{
-            display: block;
-        }
+        @include desktop-visible;
     }
     &__header{
         @include flex-center;
@@ -93,10 +83,10 @@
         }
     }
     &__item{
-        @include size-100;
         position: relative;
         display: flex;
         justify-content: space-between;
+        width: 100%;
         height: 75px;
         margin: 20px 0;
         overflow: hidden;
@@ -127,19 +117,13 @@
         z-index: 10;
     }
     &__description{
-        display: flex;
-        flex-direction: column;
+        @include flex-column;
         justify-content: center;
         padding: 10px 0 10px 10px;
         width: 70%;
         transition: width .4s ease-out;
         @media screen and (min-width: 350px) {
             width: 80%;
-        }
-        & p{
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
     }
     &__price{
@@ -157,7 +141,6 @@
         position: relative;
         width: 70px;
         height: 100%;
-        border-radius: 0 15px 15px 0;
         background-color: $clr-tertiary;
         transition: transform .4s ease-out;
         }
@@ -165,9 +148,8 @@
         font-size: 1.75rem;
         font-weight: 500;
         &__container{
-            display: flex;
+            @include flex-center;
             justify-content: space-between;
-            align-items: center;
             width: 25%;
             margin-left: 20px;
         }
@@ -186,11 +168,8 @@
         }
     }
     &__total{
-        font-size: 1.75rem;
-        font-weight: 600;
-        text-align: right;
         margin: 30px 5px;
-        &--2{
+        &__price{
             margin-left: 15px;
         }
     }
@@ -216,17 +195,7 @@ $slideUp-delay: .1s;
         animation-delay: calc($slideUp-delay * $i);
     }
 } 
-    
-@keyframes item-slideUp {
-    0%{
-        transform: translateY(20px);
-        opacity: 0;
-    };
-    100%{
-        transform: translateY(0);
-        opacity: 1;
-    };
-}
+
 
 
 //ANIMATION COCHE 

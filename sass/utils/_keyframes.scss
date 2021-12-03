@@ -1,4 +1,4 @@
-//// KEYFRAMES ////
+/* KEYFRAMES */
 
 // ANIMATION LOADER BODY
 @keyframes body-fadeIn {
@@ -45,5 +45,17 @@
     100%{
         opacity: 0;
         font-size: 7rem;
+    };
+}
+
+// ANIMATION ITEM SLIDE-UP   
+@keyframes item-slideUp {
+    0%{
+        transform: translateY(20px);
+        opacity: 0;
+    };
+    100%{
+        transform: translateY(0);
+        opacity: 1;
     };
 }

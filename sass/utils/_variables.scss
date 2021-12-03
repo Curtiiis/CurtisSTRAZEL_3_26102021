@@ -1,27 +1,29 @@
-$clr-white:      #ffffff;
-$clr-white-tr:   #fffa;
-$clr-black-font: #040a0c;
+/* VARIABLES */
 
-$clr-primary:      #9356DC;
-$clr-secondary:    #FF79DA;
-$clr-tertiary:     #99E2D0;
-$clr-tertiary-2:   #bdffee;
+/* COLOURS */
+$clr-white:        #ffffff;
 $clr-background:   #f6f6f6;
 $clr-bg-map:       #eaeaea;
-$clr-green:        #008766;
-$clr-pink:         #f5edff;
+$clr-white-tr:     #fffa;
 $clr-grey:         #7e7e7e;
+$clr-grey-tr:      #6669;
 $clr-grey-dark:    #353535;
+$clr-black-font:   #040a0c;
+$clr-primary:      #9356DC;
+$clr-secondary:    #FF79DA;
+$clr-pink:         #f5edff;
+$clr-green:        #008766;
+$clr-tertiary:     #99E2D0;
+$clr-tertiary-2:   #bdffee;
 $clr-red:          #ff0565;
 
 /* TEXT SHADOW */
 $text-shadow-white: 0 0 2px $clr-white;
 
-/* FONT-SIZES */
-
-
+/* MAX-WIDTH CONTAINER BODY */
 $width-store-ctnr: 1600px;
 
+/* BREAKPOINTS MAP */
 $breakpoints:(
     tablet: 768px,
     desktop: 975px,
@@ -33,7 +35,7 @@ $box-shadow-inset: inset 0px 11px 7px -11px rgba(0,0,0,0.28);
 $box-shadow-cards: 0 0 10px #0003;
 $box-shadow-cards-hover: 0 0 10px #0007;
 
-// LOADERS VARIABLES
+/* LOADERS VARIABLES */
 $loader-delay: .1s;
 $loader-duration: 3s;
 $loader-iteration: 1;

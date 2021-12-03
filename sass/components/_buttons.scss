@@ -1,9 +1,12 @@
+/* BUTTONS */
+
 //SWITCH LANGUAGE
 .switch__lang{
     &__form{
         display: none;
         @include mq-tablet{
             display: flex;
+            padding: 7px;
         }
     }
     &__check{
@@ -11,13 +14,15 @@
     }
     &__item{
         margin: 0 10px;
+        height: 32px;
         & img{
             opacity: .3;    
-            transition: opacity .3s ease-out;   
+            transition: opacity .3s ease-out;
         }
-        &:hover{
-            opacity: .65;
+        & img:hover{
+            opacity: .5;
             cursor: pointer;
+            transition: opacity .1s ease-out;
         }
 
     }
@@ -26,7 +31,8 @@
 //SWITCH LANGUAGE BUTTONS
 #english:checked ~ * [id*="--en"],
 #french:checked ~ * [id*="--fr"],
-#spanish:checked ~ * [id*="--sp"]{
+#spanish:checked ~ * [id*="--sp"],
+.switch__lang__check:checked ~ .switch__lang__item img:hover{
     opacity: 1;
 }
 

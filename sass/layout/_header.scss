@@ -8,7 +8,7 @@
         @include flex-center-wrap;
         @include mq-tablet{
             justify-content: space-between;
-            padding: 10px 30px 10px 0;
+            padding: 10px 20px;
         }
         @include mq-desktop{
             padding: 10px 40px 10px 10px;
@@ -20,21 +20,18 @@
         @include mq-tablet{
             width: unset;
         }
-        padding: 15px 30px 10px;
         &__link{
-            @include flex-center;
             @include size-100;
-        }
-        &__img{
-            display: block;
-            height: 30px;
+            @include flex-center;
+            padding: 15px 30px 10px;
         }
     }
     &__form{
-        position: relative;
-        display: flex;
-        height: 70%;
-        transform: translateX(50px);
+        @include flex-center;
+        width: fit-content;
+        &--2{
+            transform: translateX(50px);
+        }
     }
     &__previous{
         display: block;
@@ -48,12 +45,12 @@
         @include mq-tablet{
             width: 480px;
         }
-    }
-    &__localisation{
+    } 
+    &__localisation,&__localisation--2{
         overflow: hidden;
         @include flex-center;
         width: 100%;
-        height: 50px;
+        padding: 15px;
         background-color: $clr-bg-map;
         -webkit-box-shadow: $box-shadow-inset;
         box-shadow: $box-shadow-inset;
@@ -64,12 +61,8 @@
     &__localisation--2{
         display: none;
         @include mq-tablet{
-            @include flex-center;
-            width: 30%;
-            height: 50px;
-            background-color: $clr-bg-map;
-            -webkit-box-shadow: $box-shadow-inset;
-            box-shadow: $box-shadow-inset;
+            display: flex;
+            justify-content: end;           
         }
     }
     &__address{

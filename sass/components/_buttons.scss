@@ -108,7 +108,7 @@
     &--pink{
         background-image: linear-gradient(to top, $clr-primary, $clr-secondary);
         -webkit-text-fill-color: transparent;
-        color: none;
+        color: transparent;
         opacity: 0;
     }
 }

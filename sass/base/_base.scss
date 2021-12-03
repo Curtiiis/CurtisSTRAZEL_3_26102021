@@ -27,7 +27,7 @@ h1{
     }
 
 ::selection{
-    background-color: none;
+    background-color: transparent;
 }
 
 // LOADER PAGE - Base
@@ -45,7 +45,6 @@ h1{
             calc($loader-duration * $loader-iteration) 
             forwards;
         animation-iteration-count: 1;
-        animation-delay: 0;
     }
     &__boxes{
         opacity: 0;

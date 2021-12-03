@@ -184,7 +184,7 @@ $slideUp-delay: .1s;
     animation: item-slideUp 1s ease-out forwards;
 }
 
-#menu__title{
+.menu__title{
     &--1{animation-delay: calc($slideUp-delay * 1);}
     &--2{animation-delay: calc($slideUp-delay * 4);}
     &--3{animation-delay: calc($slideUp-delay * 8);}

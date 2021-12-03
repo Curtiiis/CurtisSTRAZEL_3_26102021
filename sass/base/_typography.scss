@@ -138,7 +138,7 @@ h2{
         &--2{
             font-size: 1.625rem;
         }
-        & p{
+        & span{
             @include dots;
         }
     }

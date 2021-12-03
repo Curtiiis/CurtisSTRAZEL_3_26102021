@@ -1,25 +1,24 @@
 .explore{
-    opacity: 0;
-    animation: body-fadeIn $body-duration forwards;
-    height: 210px;
-    &__content{
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        @include mq-tablet{
-            padding-left: 40px;
-            align-items: start;
-        }
-    }
     @include flex-column;
-    // padding: 30px 20px;
+    height: 210px;
     background-color: $clr-background;
+    animation: body-fadeIn $body-duration forwards;
     @include mq-tablet{
         align-items: start;
     }
-    // @include mq-desktop{
-    //     padding: 30px 60px;
-    // }
+    &__content{
+        min-width: 260px;
+        height: 100%;
+        @include flex-column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0 10px;
+        @include mq-tablet{
+            padding-left: 20px;
+            align-items: start;
+        }
+        @include mq-desktop{
+            padding-left: 40px;
+        }
+    }
 }

@@ -21,29 +21,32 @@
 </head>
 
 <body>
+    <!-- <input type="checkbox" id="lang-check"> -->
+    <input type="radio" name="lang" value="english" id="english" class="switch__lang__check">
+    <input type="radio" name="lang" value="french" id="french" class="switch__lang__check" checked>
+    <input type="radio" name="lang" value="spanish" id="spanish" class="switch__lang__check">
+    
     <!-- BODY CONTAINER -->
     <div class="body__container">
 
         
         <!-- LOADER PAGE -->
         <div class="loader__container">
-            <span class="loader__box" id="loader__box--1">O</span>
-            <span class="loader__box" id="loader__box--2">h</span>
-            <span class="loader__box" id="loader__box--3">m</span>
-            <span class="loader__box" id="loader__box--4">y</span>
-            <span class="loader__box" id="loader__box--5">f</span>
-            <span class="loader__box" id="loader__box--6">o</span>
-            <span class="loader__box" id="loader__box--7">o</span>
-            <span class="loader__box" id="loader__box--8">d</span>
-            <span class="loader__box" id="loader__box--9">.</span>
-            <span class="loader__box" id="loader__box--10">.</span>
-            <span class="loader__box" id="loader__box--11">.</span>
+            <div class="loader__boxes__container">
+                <span class="loader__boxes" id="loader__box--1">O</span>
+                <span class="loader__boxes" id="loader__box--2">h</span>
+                <span class="loader__boxes" id="loader__box--3">m</span>
+                <span class="loader__boxes" id="loader__box--4">y</span>
+                <span class="loader__boxes" id="loader__box--5">f</span>
+                <span class="loader__boxes" id="loader__box--6">o</span>
+                <span class="loader__boxes" id="loader__box--7">o</span>
+                <span class="loader__boxes" id="loader__box--8">d</span>
+                <span class="loader__boxes" id="loader__box--9">.</span>
+                <span class="loader__boxes" id="loader__box--10">.</span>
+                <span class="loader__boxes" id="loader__box--11">.</span>
+            </div>
         </div>
 
-        <!-- <input type="checkbox" id="lang-check"> -->
-        <input type="radio" name="lang" value="english" id="english" class="switch__lang__check">
-        <input type="radio" name="lang" value="french" id="french" class="switch__lang__check" checked>
-        <input type="radio" name="lang" value="spanish" id="spanish" class="switch__lang__check">
 
 
         <!-- HEADER -->
@@ -110,24 +113,30 @@
                 <p class="section__title sp-text">Marcha</p>
 
                 <div class="main__info__items">
-                    <p class="main__info__item" id="info__item1">
-                        <i class="fas fa-mobile-alt main__info__icons"></i>
-                        <span class="main__info__text fr-text">Choisissez un restaurant</span>
-                        <span class="main__info__text en-text">Select a restaurant</span>
-                        <span class="main__info__text sp-text">Elige un restaurante</span>
-                    </p>
-                    <p class="main__info__item" id="info__item2">
-                        <i class="fas fa-list-ul main__info__icons"></i>
-                        <span class="main__info__text fr-text">Composez votre menu</span>         
-                        <span class="main__info__text en-text">Compose your lunch</span>     
-                        <span class="main__info__text sp-text">Redacta tu menú</span>     
-                    </p>
-                    <p class="main__info__item" id="info__item3">
-                        <i class="fas fa-store main__info__icons"></i> 
-                        <span class="main__info__text fr-text">Dégustez au restaurant</span>         
-                        <span class="main__info__text en-text">Enjoy at the restaurant</span>       
-                        <span class="main__info__text sp-text">Disfruta en el restaurante </span>       
-                    </p>
+                    <div class="main__info__item" id="info__item1">
+                        <p>
+                            <i class="fas fa-mobile-alt main__info__icons"></i>
+                            <span class="main__info__text fr-text">Choisissez un restaurant</span>
+                            <span class="main__info__text en-text">Select a restaurant</span>
+                            <span class="main__info__text sp-text">Elige un restaurante</span>
+                        </p>
+                    </div>
+                    <div class="main__info__item" id="info__item2">
+                        <p>
+                            <i class="fas fa-list-ul main__info__icons"></i>
+                            <span class="main__info__text fr-text">Composez votre menu</span>         
+                            <span class="main__info__text en-text">Compose your lunch</span>     
+                            <span class="main__info__text sp-text">Redacta tu menú</span>     
+                        </p>
+                    </div>
+                    <div class="main__info__item" id="info__item3">
+                        <p>
+                            <i class="fas fa-store main__info__icons"></i> 
+                            <span class="main__info__text fr-text">Dégustez au restaurant</span>         
+                            <span class="main__info__text en-text">Enjoy at the restaurant</span>       
+                            <span class="main__info__text sp-text">Disfruta en el restaurante </span>       
+                        </p>
+                    </div>
                 </div>
             </div>
 

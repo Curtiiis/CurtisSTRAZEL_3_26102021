@@ -1,4 +1,4 @@
-// SECTION HEADER
+/* SECTION HEADER */
 
 .header{
     &__content{
@@ -30,6 +30,12 @@
             height: 30px;
         }
     }
+    &__form{
+        position: relative;
+        display: flex;
+        height: 70%;
+        transform: translateX(50px);
+    }
     &__previous{
         display: block;
         width: 40px;
@@ -40,10 +46,11 @@
         @include flex-center;
         width: 100%;
         @include mq-tablet{
-            width: 500px;
+            width: 480px;
         }
     }
     &__localisation{
+        overflow: hidden;
         @include flex-center;
         width: 100%;
         height: 50px;
@@ -58,7 +65,7 @@
         display: none;
         @include mq-tablet{
             @include flex-center;
-            width: 355px;
+            width: 30%;
             height: 50px;
             background-color: $clr-bg-map;
             -webkit-box-shadow: $box-shadow-inset;

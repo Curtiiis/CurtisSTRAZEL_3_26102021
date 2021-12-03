@@ -1,33 +1,50 @@
-// Drapeau anglais
-.header__languages{
-    display: none;
-    & img{
+//SWITCH LANGUAGE
+.switch__lang{
+    &__form{
+        display: none;
+        @include mq-tablet{
+            display: flex;
+        }
+    }
+    &__check{
         display: none;
     }
-    @include mq-tablet{
-        display: block;
-        width: 35px;
-        height: 30px;
-        margin-left: 70px;
-        transition: transform .1s;
+    &__item{
+        margin: 0 10px;
         & img{
-            display: block;
-            position: relative;
-            width: 32px;
-            height: 30px;
+            opacity: .3;    
+            transition: opacity .3s ease-out;   
         }
         &:hover{
-            transform: scale(1.05);
+            opacity: .65;
+            cursor: pointer;
         }
-        }
+
+    }
+}
+
+//SWITCH LANGUAGE BUTTONS
+#english:checked ~ * [id*="--en"],
+#french:checked ~ * [id*="--fr"],
+#spanish:checked ~ * [id*="--sp"]{
+    opacity: 1;
+}
+
+//SWITCH LANGUAGE FOR TEXT
+[class*="-text"]{
+    display: none !important; 
+}
+
+#english:checked ~ * [class*="en-text"],
+#french:checked ~ * [class*="fr-text"],
+#spanish:checked ~ * [class*="sp-text"]{
+    display: unset !important; 
 }
 
 
 // BOUTON 'Explorer' et 'Commander'
 .menu__button,
 .explore__button{
-    width: 300px;
-    height: 50px;
     padding: 12px 25px;
     border-radius: 30px;
     border: none;
@@ -50,6 +67,7 @@
     margin: 50px auto;
     width: 200px;
     height: 50px;
+    font-weight: 600;
     @include mq-desktop{
         display: none;
     }
@@ -57,14 +75,38 @@
         display: flex;
         justify-content: center;
     }
+    &--cmd{
+        display: block;
+    }
 }
 
-.menu__button--cmd{
-    display: block;
+
+//HEART & HEART-BIG - Base
+.fa-heart{
+    position: absolute;
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all .7s ease-out;
+    &--grey{
+        -webkit-text-fill-color: $clr-background;
+        -webkit-text-stroke-width: .1rem;
+        color: $clr-grey-dark;
+        opacity: 1;
+    }
+    &--white{
+        -webkit-text-fill-color: $clr-white;
+    }
+    &--pink{
+        background-image: linear-gradient(to top, $clr-primary, $clr-secondary);
+        -webkit-text-fill-color: transparent;
+        color: none;
+        opacity: 0;
+    }
 }
 
-
-//HEART BUTTON
 .heart{
     &__form--2{
         @include mq-desktop{
@@ -80,27 +122,18 @@
     }
     &__check{
         display: none;
-        position: relative;
-        right: 70px;
-        transition: all .5s ease-in-out;
     }
     &-big,&-big-2{
         @include flex-center;
+        @include center-pos-absolute;
         display: none;
         position: absolute;
         top: -100%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         &::before{
+            @include icon-pseudo-element;
+            position: relative;
             content: "\f004";
-            font-family: "Font Awesome 5 Free";
             font-size: 2rem;
-            font-weight: 900;
-            display: inline-block;
-            font-style: normal;
-            font-variant: normal;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
             color: $clr-red;  
             opacity: 0;
             transition: opacity .5s;
@@ -112,55 +145,19 @@
         transform: translate(-50%, -50%);
     }
 }
-.fa-heart{
-    position: absolute;
-    background-size: cover;
-    background-clip: text;
-    -webkit-background-clip: text;
-    font-size: 25px;
-    cursor: pointer;
-    transition: all .7s ease-out;
-}
-.fa-heart--grey{
-    -webkit-text-fill-color: $clr-background;
-    -webkit-text-stroke-width: .1rem;
-    color: $clr-grey-dark;
-    opacity: 1;
-}
-.fa-heart--white{
-    -webkit-text-fill-color: $clr-white;
-}
-.fa-heart--pink{
-    background-image: linear-gradient(to top, $clr-primary, $clr-secondary);
-    -webkit-text-fill-color: transparent;
-    color: none;
-    opacity: 0;
-}
-
-//ANIMATION HEART & HEART-BIG
-.heart__check:checked ~ .heart__label  .fa-heart--grey{
-    opacity: 0;
-}
-.heart__check:checked ~ .heart__label  .fa-heart--pink{
-    opacity: 1;
-}
-.heart__check:checked ~ .heart-big,
-.heart__check:checked ~ .heart-big-2{
-    display: unset;
-}
 
 
-@keyframes heart-big {
-    0%{
-        opacity: 0;
-        font-size: 2rem;
-    };
-    75%{
-        opacity: 1;
-        font-size: 7rem;
-    };
-    100%{
-        opacity: 0;
-        font-size: 7rem;
-    };
+//HEART & HEART-BIG - Animation
+.heart__check:checked ~ .heart{
+    &__label{
+        &  .fa-heart--grey{
+            opacity: 0;
+        }
+        &  .fa-heart--pink{
+            opacity: 1;
+        }
+    }
+    &-big, &-big-2{
+        display: unset;
+    }
 }

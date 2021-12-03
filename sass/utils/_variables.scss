@@ -1,4 +1,5 @@
 $clr-white:      #ffffff;
+$clr-white-tr:   #fffa;
 $clr-black-font: #040a0c;
 
 $clr-primary:      #9356DC;
@@ -13,7 +14,13 @@ $clr-grey:         #7e7e7e;
 $clr-grey-dark:    #353535;
 $clr-red:          #ff0565;
 
-$width-store-ctnr: 1200px;
+/* TEXT SHADOW */
+$text-shadow-white: 0 0 2px $clr-white;
+
+/* FONT-SIZES */
+
+
+$width-store-ctnr: 1600px;
 
 $breakpoints:(
     tablet: 768px,
@@ -26,5 +33,8 @@ $box-shadow-inset: inset 0px 11px 7px -11px rgba(0,0,0,0.28);
 $box-shadow-cards: 0 0 10px #0003;
 $box-shadow-cards-hover: 0 0 10px #0007;
 
-/* TEXT SHADOW */
-$text-shadow-white: 0 0 2px $clr-white;
+// LOADERS VARIABLES
+$loader-delay: .1s;
+$loader-duration: 3s;
+$loader-iteration: 1;
+$body-duration: 3s;

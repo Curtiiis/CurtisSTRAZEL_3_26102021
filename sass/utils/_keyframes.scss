@@ -1,0 +1,49 @@
+//// KEYFRAMES ////
+
+// ANIMATION LOADER BODY
+@keyframes body-fadeIn {
+    0%{opacity: .1;}
+    100%{opacity: 1;}
+}
+
+// ANIMATION PAGE LOADER
+@keyframes loader-container {
+    0%{
+        opacity: 1;
+    };
+    70%{
+        opacity: 1;
+        min-height: 100vh;
+    };
+    100%{
+        opacity: 0;
+        min-height: 0;
+        height: 0;
+        display: none;
+    };
+}
+
+// ANIMATION PAGE LOADER LETTERS
+@keyframes loader-boxes{
+    0%{opacity: 0;color: $clr-secondary};
+    20%{opacity: 1;color: $clr-secondary};
+    50%{opacity: 1;color: $clr-tertiary};
+    90%{opacity: 1;color: $clr-tertiary};
+    100%{opacity: 0;color: $clr-tertiary};
+}
+
+//ANIMATION HEART BUTTON
+@keyframes heart-big {
+    0%{
+        opacity: 0;
+        font-size: 2rem;
+    };
+    75%{
+        opacity: 1;
+        font-size: 7rem;
+    };
+    100%{
+        opacity: 0;
+        font-size: 7rem;
+    };
+}

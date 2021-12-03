@@ -1,5 +1,6 @@
 /* ICONS */
 
+// HEADER
 .header{
     &__form::before{
     @include icon-pseudo-element;
@@ -8,7 +9,7 @@
     left: -30px;
 
     color: $clr-grey-dark;
-    font-size: 1.4rem;
+    font-size: 1.75rem;
     }
 }
 
@@ -24,43 +25,20 @@
 
 // MAIN
 .main__info{
-    // &__item::before{
-    //     @include icon-pseudo-element;
-    //     @include center-trans-y;
-    //     left: 12%;
-    //     color: $clr-grey;
-    //     font-size: 1.6rem;
-    // }
     &__item::after{
-        @include flex-center;
-        @include center-trans-y;
-        position: absolute;
-        left: -10px;
-        width: 2rem;
-        height: 2rem;
-        border-radius: 50%;
-        color: $clr-white;
-        font-size: 1rem;
-        background-color: $clr-primary;
+        @include round-pseudo-element;
     }
-    // &__item:hover::before{
-    //     color: $clr-primary;
-    // }
+    &__icons{
+        color: $clr-grey;
+        font-size: 2rem;
+        margin-right: 15px;
+    }
 }
 
-.main__info__icons{
-    color: $clr-grey;
-    font-size: 1.6rem;
-    margin-right: 15px;
+@for $i from 1 to 4 {
+    #info__item#{$i}::after{content: "#{$i}"}
 }
 
-// #info__item1::before{content: "\f3cd"}
-// #info__item2::before{content: "\f0ca"}
-// #info__item3::before{content: "\f54e"}
-
-#info__item1::after{content: "1"}
-#info__item2::after{content: "2"}
-#info__item3::after{content: "3"}
 
 
 // FOOTER
@@ -68,4 +46,12 @@
 .fa-hands-helping{
     margin-right: 7px;
     font-size: 13px;
+}
+
+
+// PAGE RESTAURANT
+.fa-check-circle{
+    color: $clr-white;
+    font-size: 2.5rem;
+    transition: transform .4s ease-out;
 }

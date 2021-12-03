@@ -6,11 +6,6 @@
     box-sizing: border-box;
 }
 
-html {
-    // font-size: 62.5%;
-    font-size: 10px;
-}
-
 a{
     display: block;
     color: unset;
@@ -24,7 +19,6 @@ h1{
     }
 }
 
-
 .section__title{
         align-self: start;
         margin-bottom: 12px;
@@ -34,76 +28,44 @@ h1{
     background-color: none;
 }
 
-.explore{
-    text-align: center;
-    @include mq-tablet{
-        text-align: left;
+// LOADER PAGE - Base
+.loader{
+    &__container{
+        @include flex-center;
+        position: fixed;
+        min-height: 100vh;
+        width: 100%;
+        background-color: $clr-white-tr;
+        z-index: 30;
+        opacity: 0;
+        animation: 
+            loader-container 
+            calc($loader-duration * $loader-iteration) 
+            forwards;
+        animation-iteration-count: 1;
+        animation-delay: 0;
     }
-}
-
-// LOADER PAGE
-.loader__container{
-    @include flex-center;
-    position: fixed;
-    min-height: 100vh;
-    width: 100%;
-    background-color: #fffa;
-    z-index: 30;
-    opacity: 0;
-}
-
-//SWITCH LANGUAGE
-.switch__lang{
-    &__form{
-        display: none;
-        @include mq-tablet{
-            display: flex;
+    &__boxes{
+        opacity: 0;
+        height: 0;
+        &__container{
+            @media screen and (min-width: 1600px) {
+                transform: translateX(-50%);
+            }
         }
     }
-    &__item{
-        margin: 0 10px;
-        & img{
-            opacity: .3;    
-            transition: opacity .3s ease-out;   
-        }
-        &:hover{
-            opacity: .85;
-            cursor: pointer;
-        }
-
-    }
-}
-#english:checked ~ header img[id*="--en"],
-#french:checked ~ header img[id*="--fr"],
-#spanish:checked ~ header img[id*="--sp"]{
-    opacity: 1;
 }
 
-.switch__lang__check,
-h1[class*="fr-text"],h2[class*="fr-text"],a[class*="fr-text"],span[class*="fr-text"],p[class*="fr-text"],
-h1[class*="en-text"],h2[class*="en-text"],a[class*="en-text"],span[class*="en-text"],p[class*="en-text"],
-h1[class*="sp-text"],h2[class*="sp-text"],a[class*="sp-text"],span[class*="sp-text"],p[class*="sp-text"]{
-    display: none !important; 
+@for $i from 0 to 12 {
+    #loader__box--#{$i}{
+        animation: 
+            loader-boxes 
+            $loader-duration 
+            $loader-iteration 
+            ease-in-out 
+            calc($loader-delay * $i)
+            forwards;
+    };
 }
 
-#english:checked ~ .explore [class*="en-text"],
-#english:checked ~ .main [class*="en-text"],
-#english:checked ~ .main__restaurants span[class*="en-text"],
-#english:checked ~ .footer span[class*="en-text"]{
-    display: unset !important; 
-}
-
-#french:checked ~ .explore [class*="fr-text"],
-#french:checked ~ .main [class*="fr-text"],
-#french:checked ~ .main__restaurants span[class*="fr-text"],
-#french:checked ~ .footer span[class*="fr-text"]{
-    display: unset !important; 
-}
-
-#spanish:checked ~ .explore [class*="sp-text"],
-#spanish:checked ~ .main [class*="sp-text"],
-#spanish:checked ~ .main__restaurants span[class*="sp-text"],
-#spanish:checked ~ .footer span[class*="sp-text"]{
-    display: unset !important; 
-}
 

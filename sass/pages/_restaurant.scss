@@ -1,14 +1,39 @@
 //PAGE RESTAURANT
-
-.store__cards{
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    max-width: $width-store-ctnr;
-    margin: 0 auto;
+.store{
+    &__name{
+        max-width: 100%;
+        margin-bottom: 0;
+    }
+    &__infos{
+        position: relative;
+        @include mq-desktop{
+            position: absolute;
+            top: -165px;
+            font-size: 2rem;
+            color: $clr-white;
+            padding: 10px;
+            left: 0;
+            background-color: #6669;
+            border-radius: 15px;
+            backdrop-filter: blur(2px);
+        }
+    }
+    &__time{
+        display: none;
+        @include mq-desktop{
+            display: block;
+        }
+    }
+    &__cards{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        max-width: $width-store-ctnr;
+        margin: 0 auto;
+    }
 }
 
-#store__cmd{
+#store__name--2{
     display: none;
     @include mq-desktop{
         display: block;
@@ -18,7 +43,8 @@
 .store__menu{
     position: relative;
     width: 100%;
-    max-width: 400px;
+    max-width: 460px;
+    margin: 0 10px;
     padding: 30px 20px 15px;
     background-color: $clr-background;
     @include mq-desktop{
@@ -35,6 +61,19 @@
         height: 50px;
         background-color: $clr-background;
         border-radius: 40px 40px 0 0;
+    }
+    &--2{
+        display: none;
+        @include mq-desktop{
+            display: block;
+        }
+    }
+    &__header{
+        @include flex-center;
+        justify-content: space-evenly;
+        @include mq-desktop{
+            justify-content: space-around;
+        }
     }
     &__title{
         position: relative;
@@ -92,8 +131,11 @@
         flex-direction: column;
         justify-content: center;
         padding: 10px 0 10px 10px;
-        width: 80%;
+        width: 70%;
         transition: width .4s ease-out;
+        @media screen and (min-width: 350px) {
+            width: 80%;
+        }
         & p{
             white-space: nowrap;
             overflow: hidden;
@@ -106,7 +148,7 @@
         margin-right: 20px;
         &__icon{
             display: flex;
-            width: 12%;
+            width: 48px;
             transition: width .4s ease-out;
         }
     }
@@ -120,7 +162,7 @@
         transition: transform .4s ease-out;
         }
     &__number{
-        font-size: 1.4rem;
+        font-size: 1.75rem;
         font-weight: 500;
         &__container{
             display: flex;
@@ -132,7 +174,7 @@
     }
     &__sign{
         @include flex-center;
-        font-size: 1.4rem;
+        font-size: 1.75rem;
         font-weight: 500;
         background-color: $clr-tertiary;
         width: 20px;
@@ -144,7 +186,7 @@
         }
     }
     &__total{
-        font-size: 1.4rem;
+        font-size: 1.75rem;
         font-weight: 600;
         text-align: right;
         margin: 30px 5px;
@@ -153,74 +195,6 @@
         }
     }
 }
-
-
-
-
-.fa-check-circle{
-    color: $clr-white;
-    font-size: 2rem;
-    transition: transform .4s ease-out;
-}
-
-
-.store__menu__check:hover ~ .store__menu__price__icon .store__menu__icon{
-    transform: translateX(0px);
-}
-.store__menu__check:hover ~ .store__menu__price__icon .store__menu__icon .fa-check-circle{
-    transform: rotate(1turn);
-}
-.store__menu__check:hover + .store__menu__description{
-    width: 66%;
-}
-.store__menu__check:hover ~ .store__menu__price__icon{
-    width: 110px;
-}
-
-
-
-.store__menu__header{
-    @include flex-center;
-    justify-content: space-evenly;
-    @include mq-desktop{
-        justify-content: space-around;
-    }
-}
-
-.store__name{
-    max-width: 100%;
-    margin-bottom: 0;
-}
-#store__name--2{
-    display: none;
-    @include mq-desktop{
-        display: block;
-    }
-}
-
-.store__infos{
-    position: relative;
-    @include mq-desktop{
-        position: absolute;
-        top: -165px;
-        font-size: 2rem;
-        color: $clr-white;
-        padding: 10px;
-        left: 0;
-        background-color: #6669;
-        border-radius: 15px;
-        backdrop-filter: blur(2px);
-    }
-}
-.store__time{
-    display: none;
-    @include mq-desktop{
-        display: block;
-    }
-}
-
-
-
 
 
 // ANIMATION ITEM SLIDE-UP
@@ -255,4 +229,18 @@ $slideUp-delay: .1s;
 }
 
 
-
+//ANIMATION COCHE 
+.store__menu__check:hover ~ .store__menu{
+    &__description{width: 45%;
+        @media screen and (min-width: 350px) {
+            width: 60%;
+        }
+        @media screen and (min-width: 450px) {
+            width: 70%;
+        }
+    }
+    &__price__icon{width: 110px;
+        & .store__menu__icon{transform: translateX(0px)}
+        & .fa-check-circle{transform: rotate(1turn)}
+    }
+}

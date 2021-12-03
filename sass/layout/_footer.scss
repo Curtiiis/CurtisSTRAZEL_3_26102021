@@ -1,10 +1,10 @@
 // FOOTER
 
 .footer{
-    animation: body-fadeIn $body-duration forwards;
-    padding: 20px 0 20px 30px;
-    background-color: $clr-grey-dark;
     width: 100%;
+    padding: 20px 0 20px 30px;
+    animation: body-fadeIn $body-duration forwards;
+    background-color: $clr-grey-dark;
     &__logo{
         height: 20px;
         margin: 10px 0;
@@ -17,13 +17,6 @@
             display: flex;
         }
     }
-    &__content--2{
-        max-width: 400px;
-        margin: 0 auto;
-        @include mq-desktop{
-            max-width: $width-store-ctnr;
-        }
-    }
     &__items{
         @include mq-desktop{
             margin-left: 100px;
@@ -31,8 +24,6 @@
     }
     &__item{
         margin-bottom: 5px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        @include dots;
     }
 }

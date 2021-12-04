@@ -24,28 +24,12 @@
             cursor: pointer;
             transition: opacity .1s ease-out;
         }
-
+        & img.active, & img.active:hover{
+            opacity: 1;
+        }
     }
 }
 
-//SWITCH LANGUAGE BUTTONS
-#english:checked ~ * [id*="--en"],
-#french:checked ~ * [id*="--fr"],
-#spanish:checked ~ * [id*="--sp"],
-.switch__lang__check:checked ~ .switch__lang__item img:hover{
-    opacity: 1;
-}
-
-//SWITCH LANGUAGE FOR TEXT
-[class*="-text"]{
-    display: none !important; 
-}
-
-#english:checked ~ * [class*="en-text"],
-#french:checked ~ * [class*="fr-text"],
-#spanish:checked ~ * [class*="sp-text"]{
-    display: unset !important; 
-}
 
 
 // BOUTON 'Explorer' et 'Commander'

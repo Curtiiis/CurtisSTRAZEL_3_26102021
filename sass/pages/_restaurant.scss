@@ -200,7 +200,8 @@ $slideUp-delay: .1s;
 
 //ANIMATION COCHE 
 .store__menu__check:hover ~ .store__menu{
-    &__description{width: 45%;
+    &__description{
+        width: 45%;
         @media screen and (min-width: 350px) {
             width: 60%;
         }
@@ -208,8 +209,8 @@ $slideUp-delay: .1s;
             width: 70%;
         }
     }
-    &__price__icon{width: 110px;
-        & .store__menu__icon{transform: translateX(0px)}
+    &__price__icon{
+        width: 110px;
         & .fa-check-circle{transform: rotate(1turn)}
     }
 }

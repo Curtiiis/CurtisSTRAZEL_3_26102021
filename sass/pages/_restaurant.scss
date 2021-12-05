@@ -127,7 +127,9 @@
         }
     }
     &__price{
-        align-self: end;
+        position: relative;
+        top: 55%;
+        height: fit-content;
         padding-bottom: 13px;
         margin-right: 20px;
         &__icon{
